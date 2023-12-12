@@ -23,17 +23,17 @@ const Meeting = () => {
             return
         }
         setSelectStep(selectStep + 1)
-      
+
         // Form bilgilerini kullanarak istediğiniz işlemleri yapabilirsiniz.
         console.log('Form Verileri:', "informationSponsee");
         // Örneğin, form veril
-        
+
     }
 
     const meetingInformation = {
         date: selectedDate,
         time: selectedTime,
-        kindOfTherapy:kindOfTherapy,
+        kindOfTherapy: kindOfTherapy,
         name: informationSponsee.fullName,
         number: informationSponsee.phoneNumber,
         message: informationSponsee.message,
@@ -59,7 +59,7 @@ const Meeting = () => {
                 selectStep === 4 && <MeetInformation meetingInformation={meetingInformation} />
             }
             <div className='flex items-center justify-end' >
-                <button onClick={handleNextStep} className={`${selectStep === 4 ? "hidden" : ""}bg-primaryBlue text-white w-1/2 py-2 rounded-md hover:bg-secondaryBlue transition duration-300 ease-in-out`} >
+                <button onClick={handleNextStep} className={`${selectStep === 4 ? "hidden " : ""}bg-primaryBlue hover:opacity-90 text-white w-1/2 py-2 rounded-md  transition duration-300 ease-in-out`} >
                     {
                         selectStep === 3 ? "Randevu" : "İlerle"
                     }
