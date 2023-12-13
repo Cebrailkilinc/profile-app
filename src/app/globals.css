@@ -25,3 +25,40 @@
   .react-calendar__tile .react-calendar__tile--now .react-calendar__month-view__days__day{
     background-color: red;
   }
+
+  /* Bu stil, kalp simgesinin varsayılan boyutunu belirler */
+.heart-icon {
+  transition: transform 0.3s ease-in-out; /* Geçiş efekti için kullanılır */
+}
+
+/* Bu stil, kalp simgesinin boyutunu büyütür */
+.hearted {
+  transform: scale(1.2); /* Kalp simgesini 1.2 kat büyütür, isteğinize göre ayarlayabilirsiniz */
+}
+/* Bu stil, kalp simgesine animasyon ekler */
+@keyframes heartBeat {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+}
+
+/* Bu stil, animasyonu kullanır */
+.animate-heart {
+  animation: heartBeat 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

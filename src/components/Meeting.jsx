@@ -43,7 +43,7 @@ const Meeting = () => {
 
 
     return (
-        <div className='flex flex-col gap-5' >
+        <div className='flex flex-col gap-2' >
             <h1 className='text-start pt-10 text-2xl text-textBlue font-semibold'>Randevu Al</h1>
             <Step selectStep={selectStep} setSelectStep={setSelectStep} />
             {

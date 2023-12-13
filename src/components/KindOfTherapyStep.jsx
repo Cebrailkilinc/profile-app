@@ -20,7 +20,7 @@ const KindOfTherapyStep = ({setKindOfTherapy}) => {
           typesOfRelationships.map((item, i) => (
             <div
               key={i}
-              className={`break-words text-xs flex items-center gap-2 p-3 rounded-sm hover:opacity-90 duration-300 cursor-pointer ${selectedType === i ? 'bg-primaryGreen text-white' : 'bg-tertiaryBlue text-white'
+              className={`break-words text-xs flex items-center gap-2 p-3 rounded-lg hover:opacity-90 duration-300 cursor-pointer ${selectedType === i ? 'bg-primaryGreen text-white' : 'bg-tertiaryBlue text-white'
                 }`}
               onClick={() => handleSelectTypesOfRelationships(i)}
             >

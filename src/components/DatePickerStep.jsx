@@ -35,7 +35,7 @@ const DatePickerStep = ({ selectedTime, setSelectedTime, selectedDate, setSelect
   console.log(availabilityData);
 
   return (
-    <div className='flex flex-col gap-5 items-start'>
+    <div className='flex flex-col gap-1 items-start'>
       <h1 className='text-tertiaryBlue font-semibold text-center'>Tarih Seçiniz</h1>
       <div className='grid grid-cols-3 gap-1 w-full max-w-[300px] mx-auto text-white font-semibold justify-items-center'>
         {availabilityData && availabilityData.map(({ date, availability }) => (

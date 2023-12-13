@@ -13,7 +13,7 @@ const General = () => {
                 <ul className='flex flex-col gap-[10px] items-start text-xs' >
                     <li>Kaygi -Panik Atak</li>
                     <li>Baglanma Sorunlari-Bas etme becerileri</li>
-                    <li>Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
                     <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
                     <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
                     <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
