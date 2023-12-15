@@ -30,7 +30,7 @@ const Certificates = () => {
             certificates && certificates.map((certificate, i) => (
               <li key={i} className={`w-full flex items-center justify-between ${i !== certificates.length-1 ? "border-b" : ""}  pb-3`}>
                 <h1>{certificate.name}</h1>
-                <h1>{certificate.name}</h1>                
+                <h1>{certificate.date}</h1>                
               </li>
             ))
           }        
