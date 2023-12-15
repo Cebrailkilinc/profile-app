@@ -4,8 +4,8 @@ import { FaUserGraduate } from "react-icons/fa";
 import { LiaHospital } from "react-icons/lia";
 const Resume = () => {
   return (
-    <div className='flex flex-col gap-3 pt-5'>
-      <div className='flex items-center gap-2 mt-4' >
+    <div className='flex flex-col gap-3 mt-3 '>
+      <div className='flex items-center gap-2 ' >
         <LiaHospital size={25} />
         <h1 className='text-[18px] font-medium' >İş Yeri ve Deneyim</h1>
       </div>

@@ -4,7 +4,7 @@ import { FaUserGraduate } from "react-icons/fa";
 import { LiaHospital } from "react-icons/lia";
 
 const Certificates = () => {
-  
+
   const certificates = [{
     name: "Pozitif Psikoloji Sertifika Programı",
     date: "2019"
@@ -19,8 +19,8 @@ const Certificates = () => {
   }]
 
   return (
-    <div className='flex flex-col gap-3 pt-5'>
-      <div className='flex items-center gap-2 mt-5' >
+    <div className='flex flex-col gap-3 mt-3'>
+      <div className='flex items-center gap-2 ' >
         <FaUserGraduate size={25} />
         <h1 className='text-[18px] font-medium' >Sertifikalar</h1>
       </div>

@@ -2,15 +2,16 @@ import React from 'react'
 import { PiStethoscopeFill } from "react-icons/pi";
 import { FaUserGraduate } from "react-icons/fa";
 import { LiaHospital } from "react-icons/lia";
-
+import { RiTodoLine } from "react-icons/ri";
 const Evaluations = () => {
   return (
     <div>
-      <section className="bg-white  py-8 lg:py-16 antialiased">
-        <div className="max-w-2xl mx-auto px-4">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-lg lg:text-2xl font-bold text-gray-900 ">Değerlendirmeler (20)</h2>
-          </div>
+      <section className=" antialiased">
+        <div className='flex items-center gap-2 pb-5 mt-3 ' >
+          <RiTodoLine size={25} />
+          <h1 className='text-[18px] font-medium' >Değerlendirmeler (20)</h1>
+        </div>
+        <div className="bg-white max-w-2xl mx-auto px-4">
           <form className="mb-2">
             <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200  ">
               <label htmlFor="comment" className="sr-only">Your comment</label>

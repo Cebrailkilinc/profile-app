@@ -5,7 +5,7 @@ import { LiaHospital } from "react-icons/lia";
 
 const AreasOfExpertise = () => {
   return (
-    <div className='flex flex-col gap-3 pt-5'>
+    <div className='flex flex-col gap-3 mt-3'>
       <div className='flex items-center gap-2' >
         <PiStethoscopeFill size={27} />
         <h1 className='text-[18px] font-medium' >Klinik İlgi Alanları</h1>

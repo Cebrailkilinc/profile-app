@@ -17,8 +17,8 @@ const Education = () => {
     date: "2018"
   }]
   return (
-    <div className='flex flex-col gap-3 pt-5'>      
-      <div className='flex items-center gap-2 mt-5' >
+    <div className='flex flex-col gap-3 mt-3'>      
+      <div className='flex items-center gap-2 ' >
         <FaUserGraduate size={25} />
         <h1 className='text-[18px] font-medium' >Eğitim Bilgileri</h1>
       </div>

@@ -26,7 +26,7 @@ const Detail = () => {
         <div>
             <div className='flex flex-wrap justify-between text-textBoldBlue pt-[2px]'>
                 <div onClick={() => { setDetailControl("education") }} className=''>
-                    <div className={`flex items-center justify-center w-full ${detailControl === "education" ? "border-textBoldBlue border-b-[3px] pb-1" : "pb-6"}  gap-2 cursor-pointer`}>
+                    <div className={`flex items-center justify-center w-full ${detailControl === "education" ? "border-tertiaryBlue border-b-[3px] pb-1" : "pb-6"}  gap-2 cursor-pointer`}>
                         <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/student-male.png" alt="student-male" />
                         <h1 className='text-sm font-semibold '>Eğitim</h1>
                     </div>
