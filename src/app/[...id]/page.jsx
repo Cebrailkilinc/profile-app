@@ -24,8 +24,8 @@ const PropfilePage = () => {
     const [isModal, setIsModal] = useState(false);
 
     return (
-        <div className='bg-bgGray w-full  mx-auto desktop:ps-8 desktop:pe-10 z-0 pt-20 tablet:pt-32 pb-10'>
-            <div className=' max-w-[584px] miniTablet:max-w-[768px] tablet:max-w-[1400px] desktop:px-[117px]  mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
+        <div className='bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-32 pb-10'>
+            <div className=' max-w-[584px] miniTablet:max-w-[768px] tablet:max-w-[1250px] desktop:px-[117px]  mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
                 <div className=' bg-white w-full laptop:max-w-[393px] ps-5 pe-5 py-5 border shadow-lg rounded-3xl'>
                     <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-start gap-3'>
                         <img className='h-auto rounded-lg border-4 w-full miniTelefon:w-[150px]' src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee' />
