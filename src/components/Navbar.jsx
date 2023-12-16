@@ -48,8 +48,8 @@ const Navbar = () => {
     }, []);
     return (
         <div className='fixed top-0 bg-white w-full mx-auto border-b z-50'>
-            <div className='max-w-[584px] miniTablet:max-w-[768px] tablet:max-w-[1400px] tablet:px-2 laptop:px-5 mx-auto text-center' >
-                <div className='flex items-center justify-between px-3 sm:px-14  desktop:px-[117px] max-h-[60px] sm:max-h-[100px] py-8 tablet:py-12 '>
+            <div className='max-w-[584px] miniTablet:max-w-[768px] tablet:max-w-full tablet:px-2 laptop:px-5 mx-auto text-center' >
+                <div className='flex items-center justify-between px-3 sm:px-14  max-h-[60px] sm:max-h-[100px] py-8 tablet:py-12 '>
                     <div className='flex items-center gap-5 laptop:gap-10 desktop:gap-[48px]'>
                         <img className='w-[120px] miniTablet:w-[205px]' src='https://www.livemedy.com/images/logo.png' />
                         <ul className='hidden tablet:flex items-center gap-[33px] text-[14px]'>
