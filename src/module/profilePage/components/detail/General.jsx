@@ -4,7 +4,7 @@ import { FaUserGraduate } from "react-icons/fa";
 import { LiaHospital } from "react-icons/lia";
 const General = () => {
     return (
-        <div className='laptop:h-[calc(100vh_-_200px)] w-full mx-auto laptop:overflow-y-scroll top-0 bottom-0  flex flex-col gap-3 pt-5 '>
+        <div className='laptop:h-[calc(100vh_-_200px)] w-full mx-auto laptop:overflow-y-scroll top-0 bottom-0  flex flex-col gap-3 pt-5  px-5 '>
             <div className='flex items-center gap-2' >
                 <PiStethoscopeFill size={27} />
                 <h1 className='text-[18px] font-medium' >Klinik İlgi Alanları</h1>

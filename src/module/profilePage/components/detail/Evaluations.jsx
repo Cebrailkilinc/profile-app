@@ -4,17 +4,17 @@ import Rating from "../../../../package/components/content/Rating";
 //Icons
 import { RiTodoLine } from "react-icons/ri";
 import { FaCalendar } from "react-icons/fa";
-
+import { LuListTodo } from "react-icons/lu";
 
 const Evaluations = () => {
   return (
     <>
-      <section className="tablet:h-[calc(100vh_-_200px)] tablet:overflow-y-auto pt-5 ">
-        <div className='flex items-center gap-2 pb-5 mt-3 ' >
+      <section className="tablet:h-[calc(100vh_-_200px)] tablet:overflow-y-auto pt-2 px-5">
+        <div className='flex items-center gap-2  pb-5 mt-3 ' >
           <RiTodoLine size={25} />
-          <h1 className='text-[18px] font-medium' >Değerlendirmeler (20)</h1>
+          <h1 className='text-[18px] font-medium ' >Değerlendirmeler (20)</h1>
         </div>
-        <div className="bg-white max-w-2xl mx-auto py-5 px-4 rounded-lg">
+        <div className="bg-white max-w-3xl mx-auto py-5 px-3 rounded-lg">
           {/* <form className="mb-2">
             <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200  ">
               <label htmlFor="comment" className="sr-only">Your comment</label>

@@ -7,6 +7,7 @@ import Loading from "../../../../package/components/content/Loading";
 import { PiCertificateBold } from "react-icons/pi";
 import { MdAccountBox } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
+import { LuListTodo } from "react-icons/lu";
 
 // Dynamic Components
 const General = dynamic(() => import('./General'), {
@@ -38,8 +39,8 @@ const Detail = () => {
                 </div>
                 <div onClick={() => { setDetailControl("evaluation") }} className='w-24 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center  border-b py-3 ${detailControl === "evaluation" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
-                        <FaCamera />
-                        <h1 className='text-xs font-semibold '>Değerlendireme</h1>
+                        <LuListTodo  />
+                        <h1 className='text-xs font-semibold '>Değerlendirme</h1>
                     </div>
                 </div>
             </div>
