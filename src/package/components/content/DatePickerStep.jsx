@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { appWithTranslation } from 'next-i18next';
-import { generateAvailabilityData } from "../../utilities/dayGenerator";
+import { generateAvailabilityData } from "../../../utilities/dayGenerator";
 
 const DatePickerStep = ({ selectedTime, setSelectedTime, selectedDate, setSelectedDate }) => {
 

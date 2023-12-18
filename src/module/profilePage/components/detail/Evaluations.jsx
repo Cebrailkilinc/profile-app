@@ -1,6 +1,6 @@
 import React from 'react';
 //Components
-import Rating from "../../../../components/content/Rating";
+import Rating from "../../../../package/components/content/Rating";
 //Icons
 import { RiTodoLine } from "react-icons/ri";
 import { FaCalendar } from "react-icons/fa";

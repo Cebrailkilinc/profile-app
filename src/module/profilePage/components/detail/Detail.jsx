@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 //Components
-import Loading from "../../../../components/content/Loading";
+import Loading from "../../../../package/components/content/Loading";
 //Icons
 import { PiCertificateBold } from "react-icons/pi";
 import { MdAccountBox } from "react-icons/md";

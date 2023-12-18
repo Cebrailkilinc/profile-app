@@ -1,18 +1,16 @@
 "use client"
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react';
 
 // Components
 import Detail from "../profilePage/components/detail/Detail";
 import Modal from "../profilePage/components/Modal";
-import Rating from "../../components/content/Rating";
-import Meeting from "../../components/content/Meeting"
+import Rating from "../../package/components/content/Rating";
+import Meeting from "../../package/components/content/Meeting";
+
 // Icons
 import { BiComment } from "react-icons/bi";
 import { FaMessage } from "react-icons/fa6";
 import { HiVideoCamera } from "react-icons/hi2";
-import { PiStethoscopeFill } from "react-icons/pi";
-import { IoCaretDown } from "react-icons/io5";
-import { IoMenu } from "react-icons/io5";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
@@ -23,8 +21,8 @@ import { IoMdWallet } from "react-icons/io";
 
 const ProfilePageLayout = () => {
     
-    const [isHearted, setIsHearted] = useState(false);
-    const [isModal, setIsModal] = useState(false);
+    const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
+    const [isModal, setIsModal] = useState(false); //Social media field opening control
 
     return (
         <div className='tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
@@ -54,7 +52,7 @@ const ProfilePageLayout = () => {
                             </div>
                             <div className='miniTelefon:absolute py-5 miniTelefon:py-0 miniTelefon:bottom-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
                                 <div>
-                                    <Rating color="secondaryBlue" />
+                                     <Rating color="secondaryBlue" /> {/*Is a Component */}
                                 </div>
                                 <div className='flex items-center gap-1 ' >
                                     <h1 className='text-xs'>12</h1>
