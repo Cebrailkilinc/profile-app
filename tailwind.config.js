@@ -28,10 +28,11 @@ module.exports = {
         lighBlue: '#EFF4FF',
         primaryGreen: '#0ECA2D',
         primaryBlue:"#033CAA",
+        primaryYellow:"#FACC15",
         secondaryBlue:"#013089",      
         tertiaryBlue:"#0F2557"
       },
-
+      display: ["group-hover"],
     },
   },
   plugins: [],

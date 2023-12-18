@@ -9,7 +9,7 @@ import Meeting from "../../package/components/content/Meeting";
 
 // Icons
 import { BiComment } from "react-icons/bi";
-import { FaMessage } from "react-icons/fa6";
+import { FaBullseye, FaMessage } from "react-icons/fa6";
 import { HiVideoCamera } from "react-icons/hi2";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -18,12 +18,27 @@ import { BsBoxArrowUp } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import { FaEarthAmericas } from "react-icons/fa6";
 import { IoMdWallet } from "react-icons/io";
-
+import { BiSolidComment } from "react-icons/bi";
 const ProfilePageLayout = () => {
-    
-    const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
-    const [isModal, setIsModal] = useState(false); //Social media field opening control
 
+    const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
+    const [isCommented, setIsCommented] = useState(false);
+    const [isModal, setIsModal] = useState(false); //Social media field opening control
+    const [detailControl, setDetailControl] = useState("general")
+
+    const handleOpenCommentDetailPage = () => {
+        if (!isCommented && detailControl !== "evaluation") {
+            setIsCommented(true)
+            setDetailControl("evaluation")
+        }else if (isCommented && detailControl !== "evaluation"){
+            setIsCommented(true)
+            setDetailControl("evaluation")
+        }else if(isCommented && detailControl === "evaluation"){
+            setIsCommented(FaBullseye)
+            setDetailControl("general")
+        }
+    }
+    console.log(isCommented)
     return (
         <div className='tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
             <div className=' max-w-[584px] w-full  miniTablet:max-w-[768px] tablet:max-w-[1920px] mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
@@ -52,11 +67,16 @@ const ProfilePageLayout = () => {
                             </div>
                             <div className='miniTelefon:absolute py-5 miniTelefon:py-0 miniTelefon:bottom-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
                                 <div>
-                                     <Rating color="secondaryBlue" /> {/*Is a Component */}
+                                    <Rating color="secondaryBlue" /> {/*Is a Component */}
                                 </div>
                                 <div className='flex items-center gap-1 ' >
                                     <h1 className='text-xs'>12</h1>
-                                    <BiComment className='hover:opacity-60' />
+                                    {isCommented && detailControl === "evaluation"
+                                        ?
+                                        <BiSolidComment onClick={handleOpenCommentDetailPage} />
+                                        :
+                                        <BiComment onClick={handleOpenCommentDetailPage} className='hover:opacity-60' />
+                                    }
                                 </div>
                             </div>
                             <div className='absolute bottom-4 miniTelefon:bottom-8 telefon:bottom-0 tablet:bottom-10 flex items-center gap-2 text-xs cursor-pointer' >
@@ -90,12 +110,12 @@ const ProfilePageLayout = () => {
                                 <h6 className='text-[12px] ' >8₺/dk</h6>
                             </div>
                         </div>
-                    </div>   
-                    <Meeting/>        
+                    </div>
+                    <Meeting />
                 </div>
-                
+
                 <div className='w-full tablet:w-3/5 flex items-center justify-center pt-3 text-tertiaryBlue'>
-                    <Detail />
+                    <Detail detailControl={detailControl} setDetailControl={setDetailControl} setIsCommented={setIsCommented} isCommented={isCommented} />
                 </div>
             </div>
         </div>

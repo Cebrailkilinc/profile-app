@@ -39,9 +39,6 @@ const Meeting = () => {
         message: informationSponsee.message,
     }
 
-    console.log(meetingInformation)
-
-
     return (
         <div className='flex flex-col gap-2' >
             <h1 className='text-start pt-10 text-2xl text-textBlue font-semibold'>Randevu Al</h1>

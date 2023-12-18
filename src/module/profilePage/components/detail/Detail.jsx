@@ -20,8 +20,13 @@ const Social = dynamic(() => import('./Social'), {
     loading: () => <Loading />,
 })
 
-const Detail = () => {
-    const [detailControl, setDetailControl] = useState("general")
+const Detail = ({detailControl, setDetailControl,setIsCommented,isCommented}) => {
+
+    const handleEvaluationComment = ()=>{
+        setIsCommented(true)
+        setDetailControl("evaluation") 
+    }
+    
     return (
         <div className='w-full' >
             <div className='flex items-start justify-between w-full  pt-[2px] px-2'>
@@ -37,7 +42,7 @@ const Detail = () => {
                         <h1 className='text-xs font-semibold '>Sosyal</h1>
                     </div>
                 </div>
-                <div onClick={() => { setDetailControl("evaluation") }} className='w-24 miniTelefon:w-full '>
+                <div onClick={handleEvaluationComment} className='w-24 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center  border-b py-3 ${detailControl === "evaluation" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
                         <LuListTodo  />
                         <h1 className='text-xs font-semibold '>Değerlendirme</h1>
@@ -52,7 +57,7 @@ const Detail = () => {
                         detailControl === "social" ?
                             <Social />
                             :
-                            detailControl === "evaluation" ?
+                            detailControl === "evaluation" && isCommented ?
                                 <Evaluations />
                                 :
                                 null

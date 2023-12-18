@@ -32,8 +32,7 @@ const DatePickerStep = ({ selectedTime, setSelectedTime, selectedDate, setSelect
   const days = 15;
   const availabilityData = generateAvailabilityData(startDate, days);
 
-  console.log(availabilityData);
-
+ 
   return (
     <div className='flex flex-col gap-1 items-start'>
       <h1 className='text-tertiaryBlue font-semibold text-center'>Tarih Seçiniz</h1>

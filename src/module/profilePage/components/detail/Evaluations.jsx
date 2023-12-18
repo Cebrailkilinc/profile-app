@@ -27,7 +27,15 @@ const Evaluations = () => {
             </button>
           </form> */}
           <article className="p-1 miniTelefon:p-6 text-xs bg-white  border-b ">
-            <div className="flex justify-between items-start mb-2">
+            <div className='flex items-center justify-start border-b gap-2 pb-10' >
+              <div  className='text-xl text-white bg-gabiGreen p-5 rounded-md' >5.0</div>
+              <div className='flex flex-col items-start gap-1' >
+                <Rating size={28} />
+                <h1>Genel Puan</h1>
+                <h1>77 oy</h1>
+              </div>
+            </div>
+            <div className="flex justify-between items-start mt-5 mb-2">
               <div className="flex flex-col justify-center items-center">
                 <div className='flex items-start'>
                   <img
@@ -46,6 +54,7 @@ const Evaluations = () => {
               <div className='flex items-center gap-2 mt-1' >
                 <h1>Puan:</h1>
                 <Rating color="gabiGreen" />
+                <p className="text-xs">4.95</p>
               </div>
             </div>
             <p className=" text-start pl-8">Very straight-to-point article. Really worth time reading. Thank you! But tools are just the
