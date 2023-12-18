@@ -90,8 +90,10 @@ const ProfilePageLayout = () => {
                                 <h6 className='text-[12px] ' >8₺/dk</h6>
                             </div>
                         </div>
-                    </div>           
+                    </div>   
+                    <Meeting/>        
                 </div>
+                
                 <div className='w-full tablet:w-3/5 flex items-center justify-center pt-3 text-tertiaryBlue'>
                     <Detail />
                 </div>
