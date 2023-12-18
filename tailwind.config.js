@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       colors: {
         customRed: '#E74B3C',
+        green:'#E74B3C',
         bgGray: '#F7FAFC',
         primaryGray:"#999999",
         textGray:"#757a81",
@@ -26,9 +27,8 @@ module.exports = {
         lighBlue: '#EFF4FF',
         primaryGreen: '#0ECA2D',
         primaryBlue:"#033CAA",
-        secondaryBlue:"#013089",
+        secondaryBlue:"#013089",      
         tertiaryBlue:"#0F2557"
-
       },
 
     },

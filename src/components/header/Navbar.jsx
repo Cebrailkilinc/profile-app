@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { PiStethoscopeFill } from "react-icons/pi";
 import { IoCaretDown } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
-import SidebarMenu from './Sidebar';
+import SidebarMenu from '../Sidebar';
 
 const Navbar = () => {
     const [dropShow, setDropShow] = useState("hidden");

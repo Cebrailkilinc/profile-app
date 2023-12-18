@@ -6,7 +6,7 @@ const Resume = () => {
   return (
     <div className='flex flex-col gap-3 mt-3 '>
       <div className='flex items-center gap-2 ' >
-        <LiaHospital size={25} />
+        <LiaHospital className='' size={25} />
         <h1 className='text-[18px] font-medium' >İş Yeri ve Deneyim</h1>
       </div>
       <div className='bg-white p-5 rounded-md shadow-lg' >

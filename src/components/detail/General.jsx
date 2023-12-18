@@ -4,7 +4,7 @@ import { FaUserGraduate } from "react-icons/fa";
 import { LiaHospital } from "react-icons/lia";
 const General = () => {
     return (
-        <div className='flex flex-col gap-3 pt-5'>
+        <div className='h-[calc(100vh_-_200px)] overflow-y-scroll top-0 bottom-0  flex flex-col gap-3 '>
             <div className='flex items-center gap-2' >
                 <PiStethoscopeFill size={27} />
                 <h1 className='text-[18px] font-medium' >Klinik İlgi Alanları</h1>
@@ -45,10 +45,72 @@ const General = () => {
                         <h1>Klinik Psikolog</h1>
                         <h1>Home office</h1>
                         <h1>Eylül 2021 - Halen</h1>
-                    </li>                   
+                    </li>
                 </ul>
             </div>
+            <div className='flex items-center gap-2' >
+                <PiStethoscopeFill size={27} />
+                <h1 className='text-[18px] font-medium' >Klinik İlgi Alanları</h1>
+            </div>
+            <div className='bg-white p-5 rounded-md shadow-xl' >
+                <ul className='flex flex-col gap-[10px] items-start text-xs' >
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanima</li>
+                    <li>Kaygi -Panik Atak</li>
+                    <li>Baglanma Sorunlari-Bas etme becerileri</li>
+                    <li className='text-start' >Fobiler-Sosyal kaygi -Özgüven problemleri-Saglik kaygisi-Uyku bozuklugu</li>
+                    <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
+                    <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
+                    <li>Iliski problemleri-Degersizlik-Kendini tanimasss</li>
 
+                </ul>
+            </div>          
         </div>
     )
 }
