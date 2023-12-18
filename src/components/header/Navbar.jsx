@@ -1,9 +1,12 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
+//Components
+import SidebarMenu from "../content/Sidebar";
+//Icons
 import { PiStethoscopeFill } from "react-icons/pi";
 import { IoCaretDown } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
-import SidebarMenu from '../Sidebar';
+
 
 const Navbar = () => {
     const [dropShow, setDropShow] = useState("hidden");

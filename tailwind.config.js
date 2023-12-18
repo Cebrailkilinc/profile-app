@@ -18,7 +18,7 @@ module.exports = {
     extend: {
       colors: {
         customRed: '#E74B3C',
-        green:'#E74B3C',
+        gabiGreen:'#51E7AD',
         bgGray: '#F7FAFC',
         primaryGray:"#999999",
         textGray:"#757a81",

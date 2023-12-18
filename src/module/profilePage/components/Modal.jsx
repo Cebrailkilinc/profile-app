@@ -7,7 +7,7 @@ const Modal = ({ isModal }) => {
          :
           " overflow-hidden  transition-all h-0 duration-300 ease-in-out "}   `}>      
             <div className={`flex items-center gap-5 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
-                <div className='flex items-center gap-1'>
+                <div className='flex flex-col items-center gap-1'>
                     <img
                         width="25"
                         height="25"
@@ -16,7 +16,7 @@ const Modal = ({ isModal }) => {
                     />
                     <h1 className='text-xs font-semibold'>@gabriel02</h1>
                 </div>
-                <div className='flex items-center gap-1'>
+                <div className='flex flex-col  items-center gap-1'>
                     <img
                         width="25"
                         height="25"
@@ -25,7 +25,7 @@ const Modal = ({ isModal }) => {
                     />
                     <h1 className='text-xs font-semibold'>@gabriel02</h1>
                 </div>
-                <div className='flex items-center gap-1'>
+                <div className='flex flex-col  items-center gap-1'>
                     <img
                         width="25"
                         height="25"
