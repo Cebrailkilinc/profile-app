@@ -38,10 +38,10 @@ const Shares = () => {
         }
     }
     return (
-        <div class='grid grid-cols-1 miniTablet:grid-cols-3  gap-2 '>
+        <div class='grid grid-cols-1 miniTablet:grid-cols-3  gap-20 miniTelefon:gap-5 '>
             {openSharesWideScreen ? <SharesModal onClose={closeModal} videoRef={videoRef} videoSource={videoSource} currentVideo={currentVideo}/> : null}
             {videoList && videoList.map((video, index) => (
-                <div key={index} onClick={openModal} class='border rounded-md h-56 bg-gray-950 flex flex-col items-center justify-start hover:opacity-70 cursor-pointer'>
+                <div key={index} onClick={openModal} class='border rounded-md h-auto  bg-gray-950 flex flex-col items-center justify-start hover:opacity-70 cursor-pointer'>
                     <video className='rounded-t-md' width="100%" height="100%" controls>
                         <source src={video.name} type="video/mp4" />
                         Your browser does not support the video tag.
