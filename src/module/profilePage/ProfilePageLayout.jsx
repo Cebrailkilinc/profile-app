@@ -42,7 +42,7 @@ const ProfilePageLayout = () => {
     return (
         <div className='tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
             <div className=' max-w-[584px] w-full  miniTablet:max-w-[768px] tablet:max-w-[1920px] mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
-                <div id='fake-window' className='overflow-y-auto tablet:h-[calc(100vh_-_140px)] bg-white w-full tablet:w-2/5 laptop:max-w-[600px] ps-5 pe-5 py-5 border shadow-lg rounded-3xl'>
+                <div id='fake-window' className='overflow-y-auto tablet:h-[calc(100vh_-_140px)] bg-white w-full tablet:w-2/5 laptop:max-w-[600px] p-3 border shadow-lg rounded-3xl'>
                     <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-start gap-3'>
                         <img className='h-auto rounded-lg border-4 w-full miniTelefon:w-[150px]' src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee' />
                         <div className='w-full flex flex-col justify-between '>
@@ -67,7 +67,7 @@ const ProfilePageLayout = () => {
                             </div>
                             <div className='miniTelefon:absolute py-5 miniTelefon:py-0 miniTelefon:bottom-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
                                 <div className='flex items-center gap-1 mb-1 ' onClick={handleOpenCommentDetailPage} >
-                                    <Rating size={15} color="secondaryBlue" /> {/*Is a Component */}
+                                    <Rating size={14} color="secondaryBlue" /> {/*Is a Component */}
                                     <p className="text-xs mt-1">4.95</p>
                                 </div>
                                 <div className='flex items-center gap-1 ' >
