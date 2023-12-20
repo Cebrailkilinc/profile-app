@@ -20,23 +20,40 @@ const Social = dynamic(() => import('./Social'), {
     loading: () => <Loading />,
 })
 
-const Detail = ({detailControl, setDetailControl,setIsCommented,isCommented}) => {
+//The props here come from the <Profile Page Layout/> component
+const ProfileDetail = ({
+    detailControl,
+    setDetailControl,
+    setIsCommented,
+    isCommented
+}) => {
 
-    const handleEvaluationComment = ()=>{
+    //This function opens the comments section and updates the comment icon on the profile.
+    const handleEvaluationComment = () => {
         setIsCommented(true)
-        setDetailControl("evaluation") 
+        setDetailControl("evaluation")
     }
-    
+
+    //This function opens the general section.
+    const handleOpenGeneralInProfileDetail = () => {
+        setDetailControl("general")
+    }
+
+    //This function opens the social section.
+    const handleOpenSocialInProfileDetail = () => {
+        setDetailControl("social")
+    }
+
     return (
         <div className='w-full' >
             <div className='flex items-start justify-between w-full  pt-[2px] px-2'>
-                <div onClick={() => { setDetailControl("general") }} className='w-24 miniTelefon:w-full '>
+                <div onClick={handleOpenGeneralInProfileDetail} className='w-24 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center  border-b py-3 ${detailControl === "general" ? "border-tertiaryBlue  " : ""}  gap-1 cursor-pointer`}>
                         <MdAccountBox />
                         <h1 className='text-xs font-semibold '>Genel</h1>
                     </div>
                 </div>
-                <div onClick={() => { setDetailControl("social") }} className='w-24 miniTelefon:w-full '>
+                <div onClick={handleOpenSocialInProfileDetail} className='w-24 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center border-b py-3 ${detailControl === "social" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
                         <FaCamera />
                         <h1 className='text-xs font-semibold '>Sosyal</h1>
@@ -44,7 +61,7 @@ const Detail = ({detailControl, setDetailControl,setIsCommented,isCommented}) =>
                 </div>
                 <div onClick={handleEvaluationComment} className='w-24 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center  border-b py-3 ${detailControl === "evaluation" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
-                        <LuListTodo  />
+                        <LuListTodo />
                         <h1 className='text-xs font-semibold '>Değerlendirme</h1>
                     </div>
                 </div>
@@ -68,4 +85,4 @@ const Detail = ({detailControl, setDetailControl,setIsCommented,isCommented}) =>
     )
 }
 
-export default Detail
+export default ProfileDetail

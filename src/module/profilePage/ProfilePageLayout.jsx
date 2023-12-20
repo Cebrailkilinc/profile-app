@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 // Components
-import Detail from "../profilePage/components/detail/Detail";
-import Modal from "../profilePage/components/Modal";
+import Detail from "./components/profileDetail/ProfileDetail";
+import SocialMedia from "./components/profile/SocialMedia";
 import Rating from "../../package/components/content/Rating";
 import Meeting from "../../package/components/content/Meeting";
 
@@ -19,26 +19,29 @@ import { ImLocation } from "react-icons/im";
 import { FaEarthAmericas } from "react-icons/fa6";
 import { IoMdWallet } from "react-icons/io";
 import { BiSolidComment } from "react-icons/bi";
+
 const ProfilePageLayout = () => {
 
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
-    const [isCommented, setIsCommented] = useState(false);
+    const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isModal, setIsModal] = useState(false); //Social media field opening control
     const [detailControl, setDetailControl] = useState("general")
 
+    //This function updates the icon and opens <Evaluation/> in the profile detail field.
     const handleOpenCommentDetailPage = () => {
         if (!isCommented && detailControl !== "evaluation") {
             setIsCommented(true)
             setDetailControl("evaluation")
-        }else if (isCommented && detailControl !== "evaluation"){
+        } else if (isCommented && detailControl !== "evaluation") {
             setIsCommented(true)
             setDetailControl("evaluation")
-        }else if(isCommented && detailControl === "evaluation"){
-            setIsCommented(FaBullseye)
+        } else if (isCommented && detailControl === "evaluation") {
             setDetailControl("general")
+        } else {
+            return
         }
     }
-    console.log(isCommented)
+  
     return (
         <div className='tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
             <div className=' max-w-[584px] w-full  miniTablet:max-w-[768px] tablet:max-w-[1920px] mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
@@ -88,7 +91,7 @@ const ProfilePageLayout = () => {
                             </div>
                         </div>
                     </div>
-                    <Modal isModal={isModal} />
+                    <SocialMedia isModal={isModal} />
                     <div className=' flex items-center w-full justify-between gap-[2px] mt-5 text-textBoldBlue font-semibold' >
                         <div className='flex flex-col items-center justify-center w-full gap-1 p-5 bg-lighBlue rounded-s-xl ' >
                             <h1 className='text-[14px]' >Görüşme</h1>
@@ -114,7 +117,6 @@ const ProfilePageLayout = () => {
                     </div>
                     <Meeting />
                 </div>
-
                 <div className='w-full tablet:w-3/5 flex items-center justify-center pt-3 text-tertiaryBlue'>
                     <Detail detailControl={detailControl} setDetailControl={setDetailControl} setIsCommented={setIsCommented} isCommented={isCommented} />
                 </div>
