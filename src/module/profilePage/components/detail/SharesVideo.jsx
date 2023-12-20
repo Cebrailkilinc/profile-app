@@ -14,12 +14,14 @@ import { BsShare } from "react-icons/bs";
 
 
 
-const SharesModal = ({ onClose, videoRef, videoSource }) => {
+const SharesVideo = ({ closeModal,currentVideo }) => {
+    
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
+
     return (
-        <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] rounded-lg bg-[#1E1E1E] z-50'>
-            <span onClick={onClose} className='text-white absolute z-40 cursor-pointer top-2 right-2'>
-                <IoMdClose size={25} className='hover:opacity-80' />
+        <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] rounded-lg bg-secondaryGray z-50'>
+            <span  className='text-white absolute z-40 cursor-pointer top-2 right-2'>
+                <IoMdClose onClick={closeModal} size={25} className='hover:opacity-80' />
             </span>
             <div className='video-container'>
                 <ReactPlayer
@@ -27,9 +29,9 @@ const SharesModal = ({ onClose, videoRef, videoSource }) => {
                     playsInline
                     light={false}
                     controls={true}
-                    url={['video2.mp4']}
+                    url={[currentVideo.name]}
                     width='100%'
-                    height='100%'
+                    height='100%'                    
                     playing={true}
                     muted={true}
                     style={{ marginRight: '20px', borderRadius: "20px" }}
@@ -55,21 +57,21 @@ const SharesModal = ({ onClose, videoRef, videoSource }) => {
                         <MdOutlineModeComment className={`h-4 w-4  hover:opacity-60`} />
                         <BsShare className={`h-4 w-4 mb-1 hover:opacity-60`} />
                     </div>
-                    <h3 className='text-xs text-start text-white' >23 beğenme</h3>
-                    <div className='flex items-start gap-2'>
-                        <h3 className='text-xs text-white font-semibold'>cbrlKilinc</h3>
-                        <p className='text-xs text-start text-white font-light'>
+                    <h3 className='text-[11px] text-start text-white' >23 beğenme, 12 yorum</h3>
+                    <div className='flex items-start gap-2 text-[11px] '>
+                        <h3 className=' text-white font-semibold'>cbrlKilinc</h3>
+                        <p className=' text-start text-white font-light'>
                             This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
                         </p>
                     </div>
 
                 </div>
                 <div className='text-white' >
-                    <BsBoxArrowUp className={`h-4 w-4 hover:opacity-60`} />
+                    <BsBoxArrowUp className={`h-4 w-4 cursor-pointer hover:opacity-60`} />
                 </div>
             </div>
         </div>
     )
 }
 
-export default SharesModal
+export default SharesVideo

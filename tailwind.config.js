@@ -29,8 +29,9 @@ module.exports = {
         primaryGreen: '#0ECA2D',
         primaryBlue:"#033CAA",
         primaryYellow:"#FACC15",
-        secondaryBlue:"#013089",      
-        tertiaryBlue:"#0F2557"
+        secondaryBlue:"#013089",
+        secondaryGray:"#1E1E1E",      
+        tertiaryBlue:"#0F2557",
       },
       display: ["group-hover"],
     },
