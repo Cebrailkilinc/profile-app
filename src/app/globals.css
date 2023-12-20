@@ -3,46 +3,52 @@
 @tailwind utilities;
 
 .calendar {
-    /* by setting font-size, all the elements will correspond */
-    font-size: 9px !important; /* default to 10px */
-  }
+  /* by setting font-size, all the elements will correspond */
+  font-size: 9px !important;
+  /* default to 10px */
+}
 
-  .react-calendar__month-view__weekdays{
+.react-calendar__month-view__weekdays {
 
-    align-items: center;
- 
-    text-decoration: none;
-  
-    background-color: rgb(62, 133, 226);
-    color: white;
-    font-size: 5px;
-  }
+  align-items: center;
 
-  .react-calendar__navigation__arrow .react-calendar__navigation__prev-button{
-    background-color: aqua;
-  }
+  text-decoration: none;
 
-  .react-calendar__tile .react-calendar__tile--now .react-calendar__month-view__days__day{
-    background-color: red;
-  }
+  background-color: rgb(62, 133, 226);
+  color: white;
+  font-size: 5px;
+}
 
-  /* This style sets the default size of the heart icon. */
+.react-calendar__navigation__arrow .react-calendar__navigation__prev-button {
+  background-color: aqua;
+}
+
+.react-calendar__tile .react-calendar__tile--now .react-calendar__month-view__days__day {
+  background-color: red;
+}
+
+/* This style sets the default size of the heart icon. */
 .heart-icon {
-  transition: transform 0.3s ease-in-out; /* Geçiş efekti için kullanılır */
+  transition: transform 0.3s ease-in-out;
+  /* Geçiş efekti için kullanılır */
 }
 
 /*This style enlarges the size of the heart icon. */
 .hearted {
-  transform: scale(1.2); /* It enlarges the heart icon by 1.2 times; you can adjust it according to your preference. */
+  transform: scale(1.2);
+  /* It enlarges the heart icon by 1.2 times; you can adjust it according to your preference. */
 }
 
 /* This style adds animation to the heart icon. */
 @keyframes heartBeat {
-  0%, 100% {
-      transform: scale(1);
+
+  0%,
+  100% {
+    transform: scale(1);
   }
+
   50% {
-      transform: scale(1.2);
+    transform: scale(1.2);
   }
 }
 
@@ -56,6 +62,7 @@
     opacity: 0;
     transform: translateY(-100%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -68,26 +75,55 @@
   width: 5px;
 
 }
+
 #fake-window::-webkit-scrollbar {
- display: none;
+  display: none;
 }
+
 /* Scroll bar'ı kaydırma yönü boyunca hareket ettirildiğinde */
 ::-webkit-scrollbar-thumb {
-  background-color: #777777; /* Scroll bar rengi */
-  border-radius: 4px; /* Scroll bar köşe yuvarlama */
+  background-color: #777777;
+  /* Scroll bar rengi */
+  border-radius: 4px;
+  /* Scroll bar köşe yuvarlama */
 }
 
 /* Scroll bar üzerine gelindiğinde */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #EC6F63; /* Hover durumunda scroll bar rengi */
+  background-color: #EC6F63;
+  /* Hover durumunda scroll bar rengi */
 }
 
 /* Scroll bar track, yani kaydırma çubuğu etrafındaki arka plan */
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Track rengi */
+  background-color: #f1f1f1;
+  /* Track rengi */
 }
 
 /* Scroll bar track üzerine gelindiğinde */
 ::-webkit-scrollbar-track:hover {
-  background-color: #ddd; /* Hover durumunda track rengi */
+  background-color: #ddd;
+  /* Hover durumunda track rengi */
 }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.custom-play-button-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 100px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(83, 83, 83, 0.1);  
+  z-index: 2; /* ya da daha büyük bir değer */
+  /* Gri renkte ve %90 saydam arka plan */
+}
+

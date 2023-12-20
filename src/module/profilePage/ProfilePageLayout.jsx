@@ -66,11 +66,12 @@ const ProfilePageLayout = () => {
                                 <BsBoxArrowUp onClick={() => { setIsModal(!isModal) }} className={`${isModal ? "text-primaryBlue" : ""} hover:opacity-60`} />
                             </div>
                             <div className='miniTelefon:absolute py-5 miniTelefon:py-0 miniTelefon:bottom-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
-                                <div>
-                                    <Rating color="secondaryBlue" /> {/*Is a Component */}
+                                <div className='flex items-center gap-1 mb-1 ' onClick={handleOpenCommentDetailPage} >
+                                    <Rating size={15} color="secondaryBlue" /> {/*Is a Component */}
+                                    <p className="text-xs mt-1">4.95</p>
                                 </div>
                                 <div className='flex items-center gap-1 ' >
-                                    <h1 className='text-xs'>12</h1>
+                                    <h1 className='text-xs font-semibold'>12</h1>
                                     {isCommented && detailControl === "evaluation"
                                         ?
                                         <BiSolidComment onClick={handleOpenCommentDetailPage} />

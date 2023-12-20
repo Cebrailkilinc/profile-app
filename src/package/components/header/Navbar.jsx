@@ -50,7 +50,7 @@ const Navbar = () => {
         };
     }, []);
     return (
-        <div className='fixed top-0 bg-white w-full mx-auto border-b z-50'>
+        <div className='fixed top-0 bg-white w-full mx-auto border-b z-30'>
             <div className='max-w-[584px] miniTablet:max-w-[768px] tablet:max-w-full tablet:px-2 laptop:px-5 mx-auto text-center' >
                 <div className='flex items-center justify-between px-3 sm:px-14  max-h-[60px] sm:max-h-[100px] py-8 tablet:py-12 '>
                     <div className='flex items-center gap-5 laptop:gap-10 desktop:gap-[48px]'>

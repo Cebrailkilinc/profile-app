@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react'
 import dynamic from 'next/dynamic';
 import Loading from '../../../../package/components/content/Loading';
+import ReactPlayer from 'react-player/lazy';
+import { FaPlay } from "react-icons/fa";
+import { FaPause } from "react-icons/fa6";
+import { BsFilePlayFill } from "react-icons/bs";
 
 const SharesModal = dynamic(() => import('./SharesModal'), {
     loading: () => <Loading />
@@ -9,27 +13,29 @@ const SharesModal = dynamic(() => import('./SharesModal'), {
 const Shares = () => {
     const [openSharesWideScreen, setOpenSharesWideScreen] = useState(false);
     const [videoSource, setVideoSource] = useState('./video1.mp4');
+    const [isPlaying, setIsPlaying] = useState(false);
     const [currentVideo, setCurrentVideo] = useState({
         index: 0,
         name: 'video1.mp4',
     });
-
     const videoRef = useRef(null);
 
+    const handlePlayButtonClick = () => {
+        setIsPlaying(true);
+    };
     const videoList = [
         { name: 'video1.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
-        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },   
-        // ... diğer video dosyaları
+        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },    
     ];
 
     const openModal = (index) => {
-        setCurrentVideo({ index, name: videoList[index].name });
+
         setOpenSharesWideScreen(true);
-    
+
         if (videoRef.current) {
-          videoRef.current.play();
+            videoRef.current.play();
         }
-      };
+    };
     const closeModal = () => {
         setOpenSharesWideScreen(false);
         // Videoyu duraklat
@@ -38,19 +44,41 @@ const Shares = () => {
         }
     }
     return (
-        <div class='grid grid-cols-1 miniTablet:grid-cols-3  gap-20 miniTelefon:gap-5 '>
-            {openSharesWideScreen ? <SharesModal onClose={closeModal} videoRef={videoRef} videoSource={videoSource} currentVideo={currentVideo}/> : null}
-            {videoList && videoList.map((video, index) => (
-                <div key={index} onClick={openModal} class='border rounded-md h-auto  bg-gray-950 flex flex-col items-center justify-start hover:opacity-70 cursor-pointer'>
-                    <video className='rounded-t-md' width="100%" height="100%" controls>
-                        <source src={video.name} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <p className='text-white text-start p-2 text-sm' >{video.desc}</p>
-                </div>
-            ))}
+        <div className='grid grid-cols-1 miniTablet:grid-cols-3 gap-20 miniTelefon:gap-5 '>
+            <SharesModal />
+            <div className='video-container'>
+                <ReactPlayer
+                    controls={false}
+                    playing={true}
+                    url={[`video2.mp4`]}
+                    width='100%'
+                    height='100%'
+                    style={{}}
+                />
+            </div>
 
+            <div className='video-container'>
+                <div className='custom-play-button-overlay'>
+                    <BsFilePlayFill size={30} onClick={()=>window.alert("ssf")} className='cursor-pointer' color='white' />
+                </div>
+                <ReactPlayer
+                    loop={false}
+                    playsInline
+                    light={false}
+                    controls={false}
+                    url={['video2.mp4']}
+                    width='100%'
+                    height='100%'
+                    playing={true}
+                    muted={true}
+                />
+            </div>
         </div>
+
+
+
+
+
     )
 }
 

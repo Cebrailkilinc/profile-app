@@ -2,10 +2,14 @@ import React, { useRef } from 'react'
 import { IoCopy } from "react-icons/io5";
 const Modal = ({ isModal }) => {
     const textRef = useRef();
-    console.log(textRef.current.innerText)
+
 
     const handleCopySocialMediaNickMame = () => {
-        navigator.clipboard.writeText(textRef.current.innerText)
+        textRef.current 
+        ? 
+        navigator.clipboard.writeText(textRef.current.innerText) 
+        : 
+        null
     }
     return (
         <div className={` ${isModal ? "flex items-center justify-center  shadow-lg h-20 p-5 w-full transition-all duration-300 ease-in-out bg-white text-black rounded-lg  z-50  mt-3"
