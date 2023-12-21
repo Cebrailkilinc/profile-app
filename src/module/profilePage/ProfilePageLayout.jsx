@@ -11,16 +11,11 @@ import Alert from "../../package/components/alert/Alert"
 import { BiComment } from "react-icons/bi";
 import { FaBullseye, FaMessage } from "react-icons/fa6";
 import { HiVideoCamera } from "react-icons/hi2";
-import { IoIosHeartEmpty } from "react-icons/io";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { IoMdHeart } from "react-icons/io";
 import { BsBoxArrowUp } from "react-icons/bs";
-import { ImLocation } from "react-icons/im";
 import { FaEarthAmericas } from "react-icons/fa6";
 import { IoMdWallet } from "react-icons/io";
 import { BiSolidComment } from "react-icons/bi";
 import { FiPlus } from "react-icons/fi";
-import { RiUserFollowLine } from "react-icons/ri";
 import { BsCheck } from "react-icons/bs";
 
 const ProfilePageLayout = () => {

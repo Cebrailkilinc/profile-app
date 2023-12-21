@@ -7,7 +7,7 @@ const Alert = ({alertType, alertVisible, alertMessage }) => {
     return (
         <div>
             {alertVisible && (
-                <div className={`z-50 absolute top-28 left-10  mx-auto ${alertType === "warning"
+                <div className={`z-50 fixed top-28 left-10  mx-auto ${alertType === "warning"
                     ?
                     "bg-red-100 border border-red-400 text-red-700"
                     : alertType === "success"
