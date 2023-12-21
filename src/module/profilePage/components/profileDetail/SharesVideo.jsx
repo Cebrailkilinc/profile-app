@@ -11,7 +11,7 @@ import { IoMdHeart } from "react-icons/io";
 import { BsBoxArrowUp } from "react-icons/bs";
 import { MdOutlineModeComment } from "react-icons/md";
 import { BsShare } from "react-icons/bs";
-
+import { LuBookmark } from "react-icons/lu";
 
 
 const SharesVideo = ({ closeModal, currentVideo }) => {
@@ -19,8 +19,8 @@ const SharesVideo = ({ closeModal, currentVideo }) => {
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
 
     return (
-        <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-90 tablet:bg-none z-50'>
-            <div className='w-full max-w-xl bg-secondaryGray rounded-lg'>
+        <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50'>
+            <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
                 <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-10 tablet:right-5'>
                     <IoMdClose onClick={closeModal} size={25} className='hover:opacity-80' />
                 </span>
@@ -59,7 +59,7 @@ const SharesVideo = ({ closeModal, currentVideo }) => {
                                 <MdOutlineModeComment className={`h-4 w-4 hover:opacity-60`} />
                                 <BsShare className={`h-4 w-4 mb-1 hover:opacity-60`} />
                             </div>
-                            <div>asdasdasd</div>
+                            < LuBookmark className={`h-4 w-4 mb-1 hover:opacity-60`} />
                         </div>
                         <h3 className='text-xs text-start text-white'>23 beğenme, 12 yorum</h3>
                         <div className='flex items-start gap-2 text-xs'>

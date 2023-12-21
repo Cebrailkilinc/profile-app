@@ -30,12 +30,15 @@ const Shares = () => {
     const videoList = [
         { name: 'video1.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
         { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+        { name: 'video1.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." }
     ];
 
     //Close video modal ( <SharesVideos/> component)
     const openModal = (currentVideo) => {
         setOpenSharesWideScreen(true);
         setCurrentVideo(currentVideo)
+        //Play video
         if (videoRef.current) {
             videoRef.current.play();
         }
@@ -44,18 +47,17 @@ const Shares = () => {
     //Open video modal ( <SharesVideos/> component)
     const closeModal = () => {
         setOpenSharesWideScreen(false);
-        // Videoyu duraklat
+        // Pause video
         if (videoRef.current) {
             videoRef.current.pause();
         }
     }
 
     return (
-        <div className='grid grid-cols-1 miniTablet:grid-cols-3 gap-20 miniTelefon:gap-5 '>
+        <div className='grid grid-cols-2 miniTablet:grid-cols-3 gap-5 '>
             {
                 videoList && videoList.map((video, i) => (
                     <div key={i} onClick={() => openModal(video)} className='video-container cursor-pointer relative bg-secondaryGray'>
-
                         <BsFilePlayFill  size={30} onClick={() => window.alert("ssf")} className='cursor-pointer absolute top-2 left-1' color='white' />
                         <ReactPlayer
                             loop={false}
@@ -67,7 +69,6 @@ const Shares = () => {
                             height='100%'
                             playing={true}
                             muted={true}
-
                         />
                     </div>
                 ))
