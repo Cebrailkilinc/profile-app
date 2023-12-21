@@ -6,7 +6,7 @@ import Detail from "./components/profileDetail/ProfileDetail";
 import SocialMedia from "./components/profile/SocialMedia";
 import Rating from "../../package/components/content/Rating";
 import Meeting from "../../package/components/content/Meeting";
-
+import Alert from "../../package/components/alert/Alert"
 // Icons
 import { BiComment } from "react-icons/bi";
 import { FaBullseye, FaMessage } from "react-icons/fa6";
@@ -28,7 +28,8 @@ const ProfilePageLayout = () => {
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isModal, setIsModal] = useState(false); //Social media field opening control
-    const [detailControl, setDetailControl] = useState("general")
+    const [detailControl, setDetailControl] = useState("general");  
+
 
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
     const handleOpenCommentDetailPage = () => {
@@ -47,8 +48,10 @@ const ProfilePageLayout = () => {
 
     return (
         <div className=' tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
+            <Alert  />         
+          
             <div className=' max-w-[584px] w-full  miniTablet:max-w-[768px] tablet:max-w-[1920px] mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
-                <div id='fake-window' className='overflow-hidden tablet:h-[calc(100vh_-_140px)] bg-white w-full tablet:w-2/5 laptop:max-w-[600px] p-3 border shadow-lg rounded-3xl'>
+                <div id='fake-window' className='overflow-y-auto tablet:h-[calc(100vh_-_140px)] bg-white w-full tablet:w-2/5 laptop:max-w-[600px] p-3 border shadow-lg rounded-3xl'>
                     <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-start gap-3'>
                         <img className='h-auto rounded-lg border-4 w-full miniTelefon:w-[150px]' src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee' />
                         <div className='w-full flex flex-col justify-between '>
@@ -59,11 +62,11 @@ const ProfilePageLayout = () => {
                             <div className='absolute bottom-28 miniTelefon:top-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
                                 {isHearted ? (
                                     <div onClick={() => setIsHearted(!isHearted)} className='flex items-center gap-1 bg-primaryGreen text-white border rounded-md px-2' >
-                                        <BsCheck 
-                                        size={18}
+                                        <BsCheck
+                                            size={18}
                                             className={`heart-icon ${isHearted ? 'hearted text-white mb-1 animate-heart mt-[2px]' : ''}`}
                                         />
-                                        <h1 className='text-[11px]' >Takip</h1>
+                                        <h1 className='text-[11px] miniTelefon:hidden telefon:block' >Takip</h1>
                                     </div>
                                 ) : (
                                     <div onClick={() => setIsHearted(!isHearted)} className='flex items-center  border rounded-md py-[3px] ps-1 pe-2 miniTelefon:pe-1 telefon:pe-2' >

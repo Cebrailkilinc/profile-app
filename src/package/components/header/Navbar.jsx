@@ -70,7 +70,7 @@ const Navbar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className={`${dropShow} absolute bg-gray px-2 py-2 left-8 top-8 border z-50 bg-gray-50 rounded-md cursor-pointer`} >
+                            <div className={`${dropShow} absolute bg-gray px-2 py-2 left-8 top-8 border z-30 bg-gray-50 rounded-md cursor-pointer`} >
                                 <div className='flex flex-col gap-2'>
                                     {
                                         dropdownData && dropdownData.map((item, i) => {

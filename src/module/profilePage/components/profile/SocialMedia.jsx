@@ -1,8 +1,11 @@
 import React, { useRef } from 'react'
 import { IoCopy } from "react-icons/io5";
+
+import useAlert from "../../../../package/hooks/useAlert"
+import Alert from '../../../../package/components/alert/Alert';
 const SocialMedia = ({ isModal }) => {
     const textRef = useRef();
-
+    const { alertMessage, showAlert, alertVisible, alertType  } = useAlert();
 
     const handleCopySocialMediaNickMame = () => {
         textRef.current
@@ -10,11 +13,14 @@ const SocialMedia = ({ isModal }) => {
             navigator.clipboard.writeText(textRef.current.innerText)
             :
             null
+
+        showAlert('Kopyalandı!', "success")   
     }
     return (
         <div className={` ${isModal ? "flex items-center justify-center  shadow-lg h-20 p-5 w-full transition-all duration-300 ease-in-out bg-white text-black rounded-lg  z-50  mt-3"
             :
             " overflow-hidden  transition-all h-0 duration-300 ease-in-out "}   `}>
+            <Alert alertVisible={alertVisible} alertMessage={alertMessage} alertType={alertType}  />
             <div className={`flex items-center justify-between gap-5 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
                 <div className='group relative flex flex-col items-center gap-1  hover:scale-105 duration-300 cursor-pointer p-1'>
                     <img

@@ -9,6 +9,8 @@ import { MdAccountBox } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
 
+//Hooks 
+import useAlert  from "../../../../package/hooks/useAlert"
 // Dynamic Components
 const General = dynamic(() => import('./General'), {
     loading: () => <Loading />,
@@ -20,13 +22,15 @@ const Social = dynamic(() => import('./Social'), {
     loading: () => <Loading />,
 })
 
-//The props here come from the <Profile Page Layout/> component
+//The props here come from the <ProfilePageLayout/> component
 const ProfileDetail = ({
     detailControl,
     setDetailControl,
     setIsCommented,
     isCommented
 }) => {
+
+    const {show,alertMessage,alertVisible} = useAlert();
 
     //This function opens the comments section and updates the comment icon on the profile.
     const handleEvaluationComment = () => {
