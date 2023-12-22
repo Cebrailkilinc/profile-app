@@ -17,13 +17,13 @@ import { IoMdWallet } from "react-icons/io";
 import { BiSolidComment } from "react-icons/bi";
 import { FiPlus } from "react-icons/fi";
 import { BsCheck } from "react-icons/bs";
-
+import { CiHeart } from "react-icons/ci";
 const ProfilePageLayout = () => {
 
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isModal, setIsModal] = useState(false); //Social media field opening control
-    const [detailControl, setDetailControl] = useState("general");  
+    const [detailControl, setDetailControl] = useState("general");
 
 
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
@@ -43,8 +43,6 @@ const ProfilePageLayout = () => {
 
     return (
         <div className=' tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
-            <Alert  />         
-          
             <div className=' max-w-[584px] w-full  miniTablet:max-w-[768px] tablet:max-w-[1920px] mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
                 <div id='fake-window' className='overflow-y-auto tablet:h-[calc(100vh_-_140px)] bg-white w-full tablet:w-2/5 laptop:max-w-[600px] p-3 border shadow-lg rounded-3xl'>
                     <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-start gap-3'>
@@ -71,7 +69,6 @@ const ProfilePageLayout = () => {
                                         />
                                         <h1 className='text-[11px] miniTelefon:hidden telefon:block' >Takip Et</h1>
                                     </div>
-
                                 )}
                                 <BsBoxArrowUp onClick={() => { setIsModal(!isModal) }} className={`${isModal ? "text-primaryBlue" : ""} hover:opacity-60`} />
                             </div>

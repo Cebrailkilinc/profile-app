@@ -28,9 +28,11 @@ const Navbar = () => {
     const handleDropdownShow = () => {
         setDropShow((prev) => (prev === "hidden" ? "block" : "hidden"))
     }
+    
     const handleSideMenu = () => {
         setIsOpenSideMenu(!isOpenSideMenu)
     }
+
     const handleChangeDropdownContent = (item) => {
         setDropdownContent((prevContent) => {
             return { ...prevContent, flag: item.flag, language: item.language };

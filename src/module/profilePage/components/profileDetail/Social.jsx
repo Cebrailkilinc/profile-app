@@ -2,6 +2,7 @@ import React from 'react'
 import dynamic from 'next/dynamic';
 //Components
 import Loading from '../../../../package/components/content/Loading';
+import Shares from './Shares';
 //Icons
 import { PiCertificateBold } from "react-icons/pi";
 import { MdAccountBox } from "react-icons/md";
@@ -9,8 +10,8 @@ import { FaCamera } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
 
 // Dynamic Components
-const Shares = dynamic(() => import('./Shares'), {
-  loading: () => <Loading />,})
+// const Shares = dynamic(() => import('./Shares'), {
+//   loading: () => <Loading />,})
 
 const Social = () => {
   return (

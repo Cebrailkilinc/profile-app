@@ -3,28 +3,19 @@ import dynamic from 'next/dynamic';
 import ReactPlayer from 'react-player/lazy';
 
 //Icons
-import { FaPlay } from "react-icons/fa";
-import { FaPause } from "react-icons/fa6";
 import { BsFilePlayFill } from "react-icons/bs";
 
 const SharesVideo = dynamic(() => import('./SharesVideo')) // SharesModal added as dynamic
 
 const Shares = () => {
     const [openSharesWideScreen, setOpenSharesWideScreen] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(false);
 
     //currently playing video in <SharesVideos/> compoment
     const [currentVideo, setCurrentVideo] = useState({
         index: 0,
         name: 'video1.mp4',
     });
-
     const videoRef = useRef(null);
-
-    //video play-pause function
-    const handlePlayButtonClick = () => {
-        setIsPlaying(true);
-    };
 
     //All videos
     const videoList = [
@@ -68,7 +59,7 @@ const Shares = () => {
                             width='100%'
                             height='100%'
                             playing={true}
-                            muted={true}
+                            muted={true}                            
                         />
                     </div>
                 ))

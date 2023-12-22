@@ -4,7 +4,6 @@ import Rating from "../../../../package/components/content/Rating";
 //Icons
 import { RiTodoLine } from "react-icons/ri";
 import { FaCalendar } from "react-icons/fa";
-import { LuListTodo } from "react-icons/lu";
 
 const Evaluations = () => {
   return (
@@ -15,17 +14,6 @@ const Evaluations = () => {
           <h1 className='text-[18px] font-medium ' >Değerlendirmeler (20)</h1>
         </div>
         <div className="bg-white max-w-3xl mx-auto py-5 px-3 rounded-lg">
-          {/* <form className="mb-2">
-            <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200  ">
-              <label htmlFor="comment" className="sr-only">Your comment</label>
-              <textarea id="comment" rows="6"
-                className="px-0 w-full text-xs text-gray-900 border-0 focus:ring-0 focus:outline-none   "
-                placeholder="Write a comment..." required></textarea>
-            </div>
-            <button className={`bg-primaryBlue hover:opacity-90 text-white w-1/4 py-2 rounded-md  transition duration-300 ease-in-out`} >
-              Yorum Yap
-            </button>
-          </form> */}
           <article className="p-1 miniTelefon:p-6 text-xs bg-white  border-b ">
             <div className='flex items-center justify-start border-b gap-2 pb-10' >
               <div className='text-xl text-white bg-gabiGreen p-5 rounded-md' >5.0</div>

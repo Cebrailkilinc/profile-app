@@ -1,16 +1,13 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 //Components
 import Loading from "../../../../package/components/content/Loading";
 //Icons
-import { PiCertificateBold } from "react-icons/pi";
 import { MdAccountBox } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { RiTodoFill } from "react-icons/ri";
 
-//Hooks 
-import useAlert from "../../../../package/hooks/useAlert"
 // Dynamic Components
 const General = dynamic(() => import('./General'), {
     loading: () => <Loading />,
@@ -29,8 +26,6 @@ const ProfileDetail = ({
     setIsCommented,
     isCommented
 }) => {
-
-    const { show, alertMessage, alertVisible } = useAlert();
 
     //This function opens the comments section and updates the comment icon on the profile.
     const handleEvaluationComment = () => {
@@ -84,7 +79,6 @@ const ProfileDetail = ({
                                 :
                                 null
                 }
-
             </div>
         </div>
     )

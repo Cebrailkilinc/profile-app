@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import { IoMdClose } from "react-icons/io";
-import { FaPlay } from "react-icons/fa";
-import { FaPause } from "react-icons/fa6";
-import { BsFilePlayFill } from "react-icons/bs";
 import ReactPlayer from 'react-player/lazy';
 // Icons
 import { FaHeart } from "react-icons/fa";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
-import { BsBoxArrowUp } from "react-icons/bs";
 import { MdOutlineModeComment } from "react-icons/md";
 import { BsShare } from "react-icons/bs";
 import { LuBookmark } from "react-icons/lu";

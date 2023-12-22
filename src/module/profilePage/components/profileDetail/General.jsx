@@ -2,6 +2,7 @@ import React from 'react'
 import { PiStethoscopeFill } from "react-icons/pi";
 import { FaUserGraduate } from "react-icons/fa";
 import { LiaHospital } from "react-icons/lia";
+
 const General = () => {
     return (
         <div className='laptop:h-[calc(100vh_-_200px)] w-full mx-auto laptop:overflow-y-scroll top-0 bottom-0  flex flex-col gap-3 pt-5   '>
@@ -108,7 +109,6 @@ const General = () => {
                     <li>Depresyon,Bagimlilik -Stres-Öfke Kontrolü</li>
                     <li>Obsesif Kompulsif Bozukluk-Ebeveynlik</li>
                     <li>Iliski problemleri-Degersizlik-Kendini tanimasss</li>
-
                 </ul>
             </div>          
         </div>
