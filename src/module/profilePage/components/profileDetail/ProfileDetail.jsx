@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useCallback } from 'react';
 import dynamic from 'next/dynamic';
 //Components
 import Loading from "../../../../package/components/content/Loading";
@@ -27,21 +27,18 @@ const ProfileDetail = ({
     isCommented
 }) => {
 
-    //This function opens the comments section and updates the comment icon on the profile.
-    const handleEvaluationComment = () => {
-        setIsCommented(true)
-        setDetailControl("evaluation")
-    }
+    const handleEvaluationComment = useCallback(() => {
+        setIsCommented(true);
+        setDetailControl("evaluation");
+    }, [setIsCommented, setDetailControl]);
 
-    //This function opens the general section.
-    const handleOpenGeneralInProfileDetail = () => {
-        setDetailControl("general")
-    }
+    const handleOpenGeneralInProfileDetail = useCallback(() => {
+        setDetailControl("general");
+    }, [setDetailControl]);
 
-    //This function opens the social section.
-    const handleOpenSocialInProfileDetail = () => {
-        setDetailControl("social")
-    }
+    const handleOpenSocialInProfileDetail = useCallback(() => {
+        setDetailControl("social");
+    }, [setDetailControl]);
 
     return (
         <div className='w-full' >

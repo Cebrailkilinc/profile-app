@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import Image from 'next/image'
 // Components
 import ProfileDetail from "./components/profileDetail/ProfileDetail";
@@ -23,11 +23,11 @@ const ProfilePageLayout = () => {
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isModal, setIsModal] = useState(false); //Social media field opening control
-    const [detailControl, setDetailControl] = useState("social");
-
-    const denemeRef = useRef();
+    
+    const [detailControl, setDetailControl] = useState("general");
+    
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
-    const handleOpenCommentDetailPage = () => {
+    const handleOpenCommentDetailPage = useCallback(() => {
         if (!isCommented && detailControl !== "evaluation") {
             setIsCommented(true)
             setDetailControl("evaluation")
@@ -39,7 +39,7 @@ const ProfilePageLayout = () => {
         } else {
             return
         }
-    }
+    })
 
 
     return (
@@ -58,7 +58,7 @@ const ProfilePageLayout = () => {
                             </div>
                             <div className='absolute bottom-28 miniTelefon:top-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
                                 {isHearted ? (
-                                    <div ref={denemeRef} onClick={() => setIsHearted(!isHearted)} className='flex items-center gap-1 bg-primaryGreen text-white border rounded-md px-2' >
+                                    <div onClick={() => setIsHearted(!isHearted)} className='flex items-center gap-1 bg-primaryGreen text-white border rounded-md px-2' >
                                         <BsCheck
                                             size={18}
                                             className={`heart-icon ${isHearted ? 'hearted text-white mb-1 animate-heart mt-[2px]' : ''}`}
