@@ -23,7 +23,7 @@ const ProfilePageLayout = () => {
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isModal, setIsModal] = useState(false); //Social media field opening control
-    const [detailControl, setDetailControl] = useState("general");
+    const [detailControl, setDetailControl] = useState("social");
 
     const denemeRef = useRef();
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
