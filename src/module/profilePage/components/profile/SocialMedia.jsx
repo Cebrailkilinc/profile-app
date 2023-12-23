@@ -31,15 +31,15 @@ const SocialMedia = ({ isModal }) => {
         showAlert('Kopyalandı!', "success")
     }
     return (
-        <div className={` ${isModal ? "flex flex-col items-center justify-center  shadow-lg  p-2 w-full  transition-all duration-300 ease-in-out bg-white text-black rounded-lg  z-50  mt-3"
+        <div className={` ${isModal ? "flex flex-col items-center justify-center  shadow-lg  p-3 w-full  transition-all duration-300 ease-in-out bg-white text-black rounded-lg  z-50  mt-3"
             :
             " overflow-hidden  transition-all h-0 duration-300 ease-in-out "}   `}>
             <Alert alertVisible={alertVisible} alertMessage={alertMessage} alertType={alertType} />
-            <div className={`flex items-center  justify-between gap-2 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
+            <div className={`flex items-center w-11/12 miniTelefon:w-full overflow-x-auto  justify-between gap-2 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
                 <div className='group relative flex flex-col items-center gap-1  hover:scale-105 duration-300 cursor-pointer p-1'>
                     <Image
                         src="https://img.icons8.com/3d-fluency/94/instagram-new.png"
-                        alt="instagram-new"
+                        alt="instagram-new" 
                         width={20}
                         height={20}
                     />
