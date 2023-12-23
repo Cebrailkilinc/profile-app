@@ -19,10 +19,8 @@ const Shares = () => {
 
     //All videos
     const videoList = [
-        { name: 'video1.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
-        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
-        { name: 'video1.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
-        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." }
+        { name: 'https://www.youtube.com/watch?v=7sDY4m8KNLc', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+        { name: 'https://www.youtube.com/watch?v=7sDY4m8KNLc', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },    
     ];
 
     //Close video modal ( <SharesVideos/> component)
@@ -58,7 +56,7 @@ const Shares = () => {
                             url={[video.name]}
                             width='100%'
                             height='100%'
-                            playing={true}
+                            playing={false}
                             muted={true}                            
                         />
                     </div>
