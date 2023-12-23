@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import dynamic from 'next/dynamic';
 //Components
 import Loading from "../../../../package/components/content/Loading";
-import Index from "./index"
+import MenuItems from "./MenuItems"
 //Icons
 import { MdAccountBox } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
@@ -66,7 +66,7 @@ const ProfileDetail = ({
             </div>
             <div>
                 {
-                    <Index detailControl={detailControl} isCommented={isCommented}/>
+                    <MenuItems detailControl={detailControl} isCommented={isCommented}/>
                 }
             </div>
         </div>

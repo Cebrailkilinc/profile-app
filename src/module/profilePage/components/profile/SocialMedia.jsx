@@ -31,48 +31,50 @@ const SocialMedia = ({ isModal }) => {
         showAlert('Kopyalandı!', "success")
     }
     return (
-        <div className={` ${isModal ? "flex flex-col items-center justify-center  shadow-lg  p-3 w-full  transition-all duration-300 ease-in-out bg-white text-black rounded-lg  z-50  mt-3"
+        <div className={` ${isModal ? "flex flex-col items-center justify-center  shadow-lg  p-2 w-full  transition-all duration-300 ease-in-out bg-white text-black rounded-lg  z-50  mt-3"
             :
             " overflow-hidden  transition-all h-0 duration-300 ease-in-out "}   `}>
             <Alert alertVisible={alertVisible} alertMessage={alertMessage} alertType={alertType} />
-            <div className={`flex items-center  justify-between gap-3 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
+            <div className={`flex items-center  justify-between gap-2 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
                 <div className='group relative flex flex-col items-center gap-1  hover:scale-105 duration-300 cursor-pointer p-1'>
                     <Image
                         src="https://img.icons8.com/3d-fluency/94/instagram-new.png"
                         alt="instagram-new"
-                        width={25}
-                        height={25}
+                        width={20}
+                        height={20}
                     />
-                    <h1 ref={textRef} className='text-[10px] miniTelefon:text-xs font-semibold hover:scale-100 '>@gabriel02</h1>
+                    <h1 ref={textRef} className='text-[8px] miniTelefon:text-xs font-semibold hover:scale-100 '>@gabriel02</h1>
                     <IoCopy onClick={handleCopySocialMediaNickMame} className='absolute right-0 top-0 hidden hover:opacity-80 group-hover:block duration-300 transition-all' />
                 </div>
                 <div className='group relative flex flex-col items-center gap-1  hover:scale-105 duration-300 cursor-pointer p-1'>
-                    <img
-                        width="25"
-                        height="25"
+                    <Image
                         src="https://img.icons8.com/ios-filled/50/twitterx--v1.png"
-                        alt="twitterx--v1"
+                        alt="instagram-new"
+                        width={20}
+                        height={20}
                     />
-                    <h1 ref={textRef} className='text-[10px] miniTelefon:text-xs font-semibold hover:scale-100 '>@gabriel02</h1>
+
+                    <h1 ref={textRef} className='text-[8px] miniTelefon:text-xs font-semibold hover:scale-100 '>@gabriel02</h1>
                     <IoCopy onClick={handleCopySocialMediaNickMame} className='absolute right-0 top-0 hidden hover:opacity-80 group-hover:block duration-300 transition-all' />
                 </div>
                 <div className='group relative flex flex-col items-center gap-1  hover:scale-105 duration-300 cursor-pointer p-1'>
-                    <img
-                        width="25"
-                        height="25"
+                    <Image
                         src="https://img.icons8.com/color/48/facebook.png"
-                        alt="facebook"
+                        alt="instagram-new"
+                        width={20}
+                        height={20}
                     />
-                    <h1 ref={textRef} className='text-[10px] miniTelefon:text-xs font-semibold hover:scale-100 '>@gabriel02face</h1>
+                    <h1 ref={textRef} className='text-[8px] miniTelefon:text-xs font-semibold hover:scale-100 '>@gabriel02face</h1>
                     <IoCopy onClick={handleCopySocialMediaNickMame} className='absolute right-0 top-0 hidden hover:opacity-80 group-hover:block duration-300 transition-all' />
                 </div>
                 <div className='group relative flex flex-col  items-center gap-1  hover:scale-105 duration-300 cursor-pointer pe-5'>
-                    <img
-                        width="25"
-                        height="25"
+                    <Image
                         src="https://img.icons8.com/ios-filled/50/link--v1.png"
-                        alt="link--v1" />
-                    <h1 ref={textRef} className='text-[10px] miniTelefon:text-xs font-semibold hover:scale-100 '>Profil Link</h1>
+                        alt="instagram-new"
+                        width={20}
+                        height={20}
+                    />
+                    <h1 ref={textRef} className='text-[8px] miniTelefon:text-xs font-semibold hover:scale-100 '>Profil Link</h1>
                     <IoCopy onClick={handleCopySocialMediaUrlAddress} className='absolute right-0 top-0 hidden hover:opacity-80 group-hover:block duration-300 transition-all' />
                 </div>
             </div>
