@@ -57,12 +57,12 @@ const ProfilePageLayout = () => {
                                 <h1 className='text-start text-[13px] telefon:text-[18px]' >Seda <br /> Odabaşı Dinç</h1>
                                 <h3 className='text-textGray text-xs'>Uzman, Klinik Psikoloji</h3>
                             </div>
-                            <div className='absolute bottom-24  miniTelefon:bottom-32 left-0 w-full flex gap-3 items-center miniTelefon:items-start telefon:items-center justify-end cursor-pointer'>
+                            <div className='absolute bottom-24  miniTelefon:bottom-32 left-0 w-full flex gap-3  items-center justify-end cursor-pointer'>
                                 {isHearted ? (
-                                    <div onClick={() => setIsHearted(!isHearted)} className='flex items-center gap-1 bg-primaryGreen text-white border rounded-md px-2' >
+                                    <div onClick={() => setIsHearted(!isHearted)} className='flex items-center gap-1 bg-primaryGreen text-white border rounded-md px-2 py-[2px] ' >
                                         <BsCheck
                                             size={18}
-                                            className={`heart-icon ${isHearted ? 'hearted text-white mb-1 animate-heart mt-[2px]' : ''}`}
+                                            className={`heart-icon ${isHearted ? 'hearted text-white  animate-heart ' : ''}`}
                                         />
                                         <h1 className='text-[11px] miniTelefon:hidden telefon:block' >Takip</h1>
                                     </div>

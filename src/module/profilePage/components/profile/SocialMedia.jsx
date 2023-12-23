@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { IoCopy } from "react-icons/io5";
-import { FaLink } from "react-icons/fa";
 import Image from 'next/image';
 import useAlert from "../../../../package/hooks/useAlert"
 import Alert from '../../../../package/components/alert/Alert';
@@ -35,7 +34,7 @@ const SocialMedia = ({ isModal }) => {
             :
             " overflow-hidden  transition-all h-0 duration-300 ease-in-out "}   `}>
             <Alert alertVisible={alertVisible} alertMessage={alertMessage} alertType={alertType} />
-            <div className={`flex items-center w-11/12 miniTelefon:w-full overflow-x-auto  justify-between gap-2 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
+            <div className={`flex items-center w-11/12 miniTelefon:w-full overflow-x-auto  tablet:px-10 justify-between gap-2 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
                 <div className='group relative flex flex-col items-center gap-1  hover:scale-105 duration-300 cursor-pointer p-1'>
                     <Image
                         src="https://img.icons8.com/3d-fluency/94/instagram-new.png"
