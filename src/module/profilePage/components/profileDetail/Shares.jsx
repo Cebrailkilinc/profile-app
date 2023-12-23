@@ -19,7 +19,7 @@ const Shares = () => {
 
     //All videos
     const videoList = [
-        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." }    
+        { name: '', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." }    
     ];
 
     //Close video modal ( <SharesVideos/> component)
