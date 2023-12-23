@@ -51,6 +51,7 @@ const Navbar = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+ 
     return (
         <div className='fixed top-0 bg-white w-full mx-auto border-b z-30'>
             <div className='max-w-[584px] miniTablet:max-w-[768px] tablet:max-w-full tablet:px-2 laptop:px-5 mx-auto text-center' >

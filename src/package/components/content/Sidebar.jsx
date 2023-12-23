@@ -37,11 +37,7 @@ const SidebarMenu = ({ isOpenSideMenu, setIsOpenSideMenu }) => {
                 <li className='flex items-center gap-5 border-b py-6 '>
                     <RiEditBoxLine size={25} className='text-gray-800' />
                     <h1 className='text-gray-800 font-light'>Yardım</h1>
-                </li>
-                <li className='flex items-center gap-5 border-b py-6 '>
-                    <RiEditBoxLine size={25} className='text-gray-800' />
-                    <h1 className='text-gray-800 font-light'>Yardım</h1>
-                </li>
+                </li>           
             </ul>
         </div>
 

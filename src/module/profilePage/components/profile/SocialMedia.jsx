@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
 import { IoCopy } from "react-icons/io5";
 import { FaLink } from "react-icons/fa";
-
+import Image from 'next/image';
 import useAlert from "../../../../package/hooks/useAlert"
 import Alert from '../../../../package/components/alert/Alert';
+
 const SocialMedia = ({ isModal }) => {
     const textRef = useRef();
     const { alertMessage, showAlert, alertVisible, alertType } = useAlert();
@@ -18,6 +19,7 @@ const SocialMedia = ({ isModal }) => {
 
         showAlert('Kopyalandı!', "success")
     }
+
     //Click and copy text
     const handleCopySocialMediaUrlAddress = () => {
         textRef.current
@@ -35,11 +37,11 @@ const SocialMedia = ({ isModal }) => {
             <Alert alertVisible={alertVisible} alertMessage={alertMessage} alertType={alertType} />
             <div className={`flex items-center  justify-between gap-3 ${isModal ? "h-20" : " overflow-hidden transition h-0"}`}>
                 <div className='group relative flex flex-col items-center gap-1  hover:scale-105 duration-300 cursor-pointer p-1'>
-                    <img
-                        width="25"
-                        height="25"
+                    <Image
                         src="https://img.icons8.com/3d-fluency/94/instagram-new.png"
                         alt="instagram-new"
+                        width={25}
+                        height={25}
                     />
                     <h1 ref={textRef} className='text-[10px] miniTelefon:text-xs font-semibold hover:scale-100 '>@gabriel02</h1>
                     <IoCopy onClick={handleCopySocialMediaNickMame} className='absolute right-0 top-0 hidden hover:opacity-80 group-hover:block duration-300 transition-all' />

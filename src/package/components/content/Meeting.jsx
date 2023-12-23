@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic';
-import { appWithTranslation } from 'next-i18next';
 import Loading from "./Loading"
 
 const KindOfTherapyStep = dynamic(() => import("./KindOfTherapyStep"));
@@ -66,4 +65,4 @@ const Meeting = () => {
     )
 }
 
-export default appWithTranslation(Meeting)
+export default Meeting;
