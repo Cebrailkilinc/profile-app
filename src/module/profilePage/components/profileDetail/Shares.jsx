@@ -19,7 +19,9 @@ const Shares = () => {
 
     //All videos
     const videoList = [
-        { name: '', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." }    
+        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+        { name: 'video2.mp4', caption: 'Video 2', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." }
     ];
 
     //Close video modal ( <SharesVideos/> component)
@@ -46,7 +48,7 @@ const Shares = () => {
             {
                 videoList && videoList.map((video, i) => (
                     <div key={i} onClick={() => openModal(video)} className='video-container cursor-pointer relative bg-secondaryGray'>
-                        <BsFilePlayFill  size={30} onClick={() => window.alert("ssf")} className='cursor-pointer absolute top-2 left-1' color='white' />
+                        <BsFilePlayFill size={30} onClick={() => window.alert("ssf")} className='cursor-pointer absolute top-2 left-1' color='white' />
                         <ReactPlayer
                             loop={false}
                             playsInline
@@ -56,7 +58,7 @@ const Shares = () => {
                             width='100%'
                             height='100%'
                             playing={true}
-                            muted={true}                            
+                            muted={true}
                         />
                     </div>
                 ))
