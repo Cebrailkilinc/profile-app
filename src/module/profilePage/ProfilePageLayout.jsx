@@ -18,14 +18,12 @@ import { BiSolidComment } from "react-icons/bi";
 import { FiPlus } from "react-icons/fi";
 import { BsCheck } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
-
-
 const ProfilePageLayout = () => {
 
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isModal, setIsModal] = useState(false); //Social media field opening control
-    const [detailControl, setDetailControl] = useState("social");
+    const [detailControl, setDetailControl] = useState("general");
 
     const denemeRef = useRef();
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
@@ -51,7 +49,7 @@ const ProfilePageLayout = () => {
                     <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-start gap-3'>
                         <img
                             className='h-auto rounded-lg border-4 w-full miniTelefon:w-[150px]'
-                            src="profile.png"
+                            src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee'
                         />
                         <div className='w-full flex flex-col justify-between '>
                             <div className='flex flex-col justify-start items-start gap-1'>
