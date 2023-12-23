@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef, useState, useCallback } from 'react';
 import Image from 'next/image'
+
 // Components
 import ProfileDetail from "./components/profileDetail/ProfileDetail";
 import SocialMedia from "./components/profile/SocialMedia";
@@ -18,14 +19,14 @@ import { BiSolidComment } from "react-icons/bi";
 import { FiPlus } from "react-icons/fi";
 import { BsCheck } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
+
 const ProfilePageLayout = () => {
 
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isModal, setIsModal] = useState(false); //Social media field opening control
-    
     const [detailControl, setDetailControl] = useState("general");
-    
+
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
     const handleOpenCommentDetailPage = useCallback(() => {
         if (!isCommented && detailControl !== "evaluation") {

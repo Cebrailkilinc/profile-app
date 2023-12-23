@@ -3,6 +3,7 @@ import React, { useCallback } from 'react';
 import dynamic from 'next/dynamic';
 //Components
 import Loading from "../../../../package/components/content/Loading";
+import Index from "./index"
 //Icons
 import { MdAccountBox } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
@@ -30,16 +31,17 @@ const ProfileDetail = ({
     const handleEvaluationComment = useCallback(() => {
         setIsCommented(true);
         setDetailControl("evaluation");
-    }, [setIsCommented, setDetailControl]);
+    }, [isCommented, detailControl]);
 
     const handleOpenGeneralInProfileDetail = useCallback(() => {
         setDetailControl("general");
-    }, [setDetailControl]);
+    }, [detailControl]);
 
     const handleOpenSocialInProfileDetail = useCallback(() => {
         setDetailControl("social");
-    }, [setDetailControl]);
+    }, [detailControl]);
 
+   
     return (
         <div className='w-full' >
             <div className='flex items-start justify-between w-full  pt-[2px] p'>
@@ -55,7 +57,6 @@ const ProfileDetail = ({
                         <h1 className='text-xs font-semibold '>Sosyal</h1>
                     </div>
                 </div>
-
                 <div onClick={handleEvaluationComment} className='w-28 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center border-b py-3 ${detailControl === "evaluation" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
                         <RiTodoFill />
@@ -65,16 +66,7 @@ const ProfileDetail = ({
             </div>
             <div>
                 {
-                    detailControl === "general" ?
-                        <General />
-                        :
-                        detailControl === "social" ?
-                            <Social />
-                            :
-                            detailControl === "evaluation" && isCommented ?
-                                <Evaluations />
-                                :
-                                null
+                    <Index detailControl={detailControl} isCommented={isCommented}/>
                 }
             </div>
         </div>
