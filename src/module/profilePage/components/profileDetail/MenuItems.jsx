@@ -1,28 +1,30 @@
 import React, { useReducer } from 'react';
 import dynamic from 'next/dynamic';
+
 import Loading from '../../../../package/components/content/Loading';
+
 // Dynamic Components
-const General = dynamic(() => import('./General'), {
+const TabItemGeneral = dynamic(() => import('./TabItemGeneral'), {
     loading: () => <Loading />,
 });
-const Evaluations = dynamic(() => import('./Evaluations'), {
+const TabsItemSocial = dynamic(() => import('./TabsItemSocial'), {
     loading: () => <Loading />,
-})
-const Social = dynamic(() => import('./Social'), {
+});
+const TabsItemEvaluations = dynamic(() => import('./TabsItemEvaluations'), {
     loading: () => <Loading />,
 })
 
-const Index = ({detailControl,isCommented}) => {
+const MenuItems = ({ detailControl, isCommented }) => {
     switch (detailControl) {
         case "general":
-            return <General />;
+            return <TabItemGeneral />;
         case "social":
-            return <Social />;
+            return <TabsItemSocial />;
         case "evaluation":
-            return isCommented ? <Evaluations /> : null;
+            return isCommented ? <TabsItemEvaluations /> : null;
         default:
             return null;
     }
 }
 
-export default Index
+export default MenuItems

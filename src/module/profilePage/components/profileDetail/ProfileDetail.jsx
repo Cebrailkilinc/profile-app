@@ -9,17 +9,6 @@ import { MdAccountBox } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { RiTodoFill } from "react-icons/ri";
 
-// Dynamic Components
-const General = dynamic(() => import('./General'), {
-    loading: () => <Loading />,
-});
-const Evaluations = dynamic(() => import('./Evaluations'), {
-    loading: () => <Loading />,
-})
-const Social = dynamic(() => import('./Social'), {
-    loading: () => <Loading />,
-})
-
 //The props here come from the <ProfilePageLayout/> component
 const ProfileDetail = ({
     detailControl,

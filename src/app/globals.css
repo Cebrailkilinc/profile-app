@@ -69,11 +69,6 @@
   }
 }
 
-.deneme:active {
-
-
-
-}
 
 /* WebKit tarayıcıları için scrollbar stilini özelleştirme */
 /* Scroll bar'ını inceltme ve özel bir renk atama */
@@ -129,7 +124,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(83, 83, 83, 0.1);  
-  z-index: 2; /* ya da daha büyük bir değer */
+  background-color: rgba(83, 83, 83, 0.1);
+  z-index: 2;
+  /* ya da daha büyük bir değer */
   /* Gri renkte ve %90 saydam arka plan */
+}
+
+/* Öğelerin varsayılan tıklanabilir vurgulama stilini devre dışı bırak */
+* {
+  -webkit-tap-highlight-color: transparent;
+  /* Safari, Chrome, Opera, UC Browser */
+  -webkit-touch-callout: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
 }

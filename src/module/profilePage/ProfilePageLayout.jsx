@@ -1,13 +1,10 @@
 "use client"
-import React, { useRef, useState, useCallback } from 'react';
-import Image from 'next/image'
+import React, {useState} from 'react';
 
 // Components
 import ProfileDetail from "./components/profileDetail/ProfileDetail";
 import SocialMedia from "./components/profileCard/SocialMedia";
-import Rating from "../../package/components/content/Rating";
 import Meeting from "../../package/components/content/Meeting";
-import Alert from "../../package/components/alert/Alert";
 import ProfileCardInfo from "./components/profileCard/ProfileCardInfo";
 import ProfileCardHeader from "./components/profileCard/ProfileCardHeader"
 
@@ -16,7 +13,7 @@ const ProfilePageLayout = () => {
 
     const [isHearted, setIsHearted] = useState(false); //Hert button control in profile
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
-    const [isModal, setIsModal] = useState(false); //Social media field opening control
+    const [isFollow, setIsFollow] = useState(false); //Social media field opening control
     const [detailControl, setDetailControl] = useState("general");
 
 
@@ -31,10 +28,10 @@ const ProfilePageLayout = () => {
                         setDetailControl={setDetailControl}
                         setIsCommented={setIsCommented}
                         isCommented={isCommented}
-                        isModal={isModal}
-                        setIsModal={setIsModal}
+                        isFollow={isFollow}
+                        setIsFollow={setIsFollow}
                     />
-                    <SocialMedia isModal={isModal} />
+                    <SocialMedia isFollow={isFollow} />
                     <ProfileCardInfo />
                     <Meeting />
                 </div>

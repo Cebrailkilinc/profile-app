@@ -6,13 +6,11 @@ import { BiComment } from "react-icons/bi";
 import { FaBullseye, FaMessage } from "react-icons/fa6";
 import { HiVideoCamera } from "react-icons/hi2";
 import { BsBoxArrowUp } from "react-icons/bs";
-import { FaEarthAmericas } from "react-icons/fa6";
-import { IoMdWallet } from "react-icons/io";
 import { BiSolidComment } from "react-icons/bi";
 import { FiPlus } from "react-icons/fi";
 import { BsCheck } from "react-icons/bs";
-import { CiHeart } from "react-icons/ci";
 
+//This props came from <ProfilePageLayut/>  component
 const ProfileCardHeader = (
     {
         isHearted,
@@ -21,8 +19,8 @@ const ProfileCardHeader = (
         setDetailControl,
         setIsCommented,
         isCommented,
-        isModal, 
-        setIsModal
+        isFollow, 
+        setIsFollow
     }) => {
 
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
@@ -70,7 +68,7 @@ const ProfileCardHeader = (
                             <h1 className='text-[11px] miniTelefon:hidden telefon:block' >Takip Et</h1>
                         </div>
                     )}
-                    <BsBoxArrowUp onClick={() => { setIsModal(!isModal) }} className={`${isModal ? "text-primaryBlue" : ""} hover:opacity-60`} />
+                    <BsBoxArrowUp onClick={() => { setIsFollow(!isFollow) }} className={`${isFollow ? "text-primaryBlue" : ""} hover:opacity-60`} />
                 </div>
                 <div className='miniTelefon:absolute py-5 miniTelefon:py-0 miniTelefon:bottom-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
                     <div className='flex items-center gap-1 mb-1 ' onClick={handleOpenCommentDetailPage} >

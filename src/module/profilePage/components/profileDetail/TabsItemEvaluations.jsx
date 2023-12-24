@@ -5,7 +5,7 @@ import Rating from "../../../../package/components/content/Rating";
 import { RiTodoLine } from "react-icons/ri";
 import { FaCalendar } from "react-icons/fa";
 
-const Evaluations = () => {
+const TabsItemEvaluations = () => {
   return (
     <>
       <section className="tablet:h-[calc(100vh_-_200px)] tablet:overflow-y-auto pt-2 px-">
@@ -82,4 +82,4 @@ const Evaluations = () => {
   )
 }
 
-export default Evaluations
+export default TabsItemEvaluations

@@ -3,7 +3,7 @@ import { PiStethoscopeFill } from "react-icons/pi";
 import { FaUserGraduate } from "react-icons/fa";
 import { LiaHospital } from "react-icons/lia";
 
-const General = () => {
+const TabItemsGeneral = () => {
     return (
         <div className='laptop:h-[calc(100vh_-_200px)] w-full mx-auto laptop:overflow-y-scroll top-0 bottom-0  flex flex-col gap-3 pt-5   '>
             <div className='flex items-center gap-2' >
@@ -115,4 +115,4 @@ const General = () => {
     )
 }
 
-export default General
+export default TabItemsGeneral
