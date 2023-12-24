@@ -85,7 +85,7 @@ const ProfileCardHeader = (
                         }
                     </div>
                 </div>
-                <div className='absolute bottom-4 miniTelefon:bottom-8 telefon:bottom-0 tablet:bottom-10 flex items-center gap-2 text-xs cursor-pointer' >
+                <div className='absolute bottom-6 miniTelefon:bottom-10 telefon:bottom-1 tablet:bottom-10 flex items-center gap-2 text-xs cursor-pointer' >
                     <button className='bg-primaryGreen hover:opacity-80 text-white  rounded-md  transition duration-300 ease-in-out flex items-center px-3 py-1 gap-1'>
                         <FaMessage className='text-gray-100 hover:opacity-90 ' />
                         <h1 className='hover:opacity-90 text-[10px]' >Mesaj</h1>
