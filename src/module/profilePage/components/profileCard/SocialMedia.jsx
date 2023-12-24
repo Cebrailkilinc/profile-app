@@ -67,7 +67,6 @@ const SocialMedia = ({ isFollow }) => {
             />
             <div
                 className={`flex items-center justify-around overflow-x-auto gap-1 w-full ${isFollow ? 'h-20' : 'overflow-hidden transition h-0'}`}
-
             >
                 {socialMediaItems && socialMediaItems.map((item, index) => (
                     <div

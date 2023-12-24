@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from 'react';
+import React, { useState, useRef } from 'react';
 
 // Components
 import ProfileDetail from "./components/profileDetail/ProfileDetail";
@@ -15,7 +15,7 @@ const ProfilePageLayout = () => {
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isFollow, setIsFollow] = useState(false); //Social media field opening control
     const [detailControl, setDetailControl] = useState("general");
-
+    const socialRef = useRef();
 
     return (
         <div className=' tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
@@ -30,8 +30,13 @@ const ProfilePageLayout = () => {
                         isCommented={isCommented}
                         isFollow={isFollow}
                         setIsFollow={setIsFollow}
+                        socialRef={socialRef }
                     />
-                    <SocialMedia isFollow={isFollow} />
+                    <SocialMedia
+                        isFollow={isFollow}
+                        setIsFollow={setIsFollow}
+                        socialRef={socialRef }
+                    />
                     <ProfileCardInfo />
                     <Meeting />
                 </div>
