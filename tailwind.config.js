@@ -30,6 +30,7 @@ module.exports = {
         primaryBlue:"#033CAA",
         primaryYellow:"#FACC15",
         primaryRed:"#ff1a1a",
+        primaryPink:"#B181F8",
         secondaryBlue:"#013089",
         secondaryGray:"#1E1E1E",  
         secondaryRed:"#ffcccc",    

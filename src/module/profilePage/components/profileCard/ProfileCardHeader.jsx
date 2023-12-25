@@ -53,20 +53,21 @@ const ProfileCardHeader = (
                 </div>
                 <div ref={socialRef} className='deneme absolute bottom-24  miniTelefon:bottom-32 left-0 w-full flex gap-3  items-center justify-end cursor-pointer'>
                     {isHearted ? (
-                        <div onClick={() => setIsHearted(!isHearted)} className='flex items-center gap-1 bg-primaryGreen text-white border rounded-md px-2 py-[2px] ' >
+                        <div onClick={() => setIsHearted(!isHearted)} className='flex miniTelefon:hidden telefon:flex items-center gap-1 bg-primaryBlue text-white border rounded-md px-2 py-[2px] ' >
                             <BsCheck
                                 size={18}
                                 className={`heart-icon ${isHearted ? 'hearted text-white  animate-heart ' : ''}`}
                             />
-                            <h1 className='text-[11px] miniTelefon:hidden telefon:block' >Takip</h1>
+                          <h1 className='text-[11px]' >Takip</h1>
                         </div>
                     ) : (
-                        <div onClick={() => setIsHearted(!isHearted)} className='flex items-center  border rounded-md py-[3px] ps-1 pe-2 miniTelefon:pe-1 telefon:pe-2' >
+                        <div onClick={() => setIsHearted(!isHearted)} className='flex miniTelefon:hidden telefon:flex items-center  border rounded-md py-[3px] ps-1 pe-2 miniTelefon:pe-1 telefon:pe-2
+                        text-white bg-primaryBlue' >
                             <FiPlus
                                 size={14}
                                 className={`heart-icon ${isHearted ? 'heartedmb-1 animate-heart' : ''}`}
                             />
-                            <h1 className='text-[11px] miniTelefon:hidden telefon:block' >Takip Et</h1>
+                            <h1 className='text-[11px] miniTelefon:hidden telefon:block ' >Takip Et</h1>
                         </div>
                     )}
                     <BsBoxArrowUp  onClick={() => { setIsFollow(!isFollow) }} className={`${isFollow ? "text-primaryBlue" : ""} hover:opacity-60`} />
@@ -91,6 +92,23 @@ const ProfileCardHeader = (
                         <FaMessage className='text-gray-100 hover:opacity-90 ' />
                         <h1 className='hover:opacity-90 text-[10px]' >Mesaj</h1>
                     </button>
+                    {isHearted ? (
+                        <div onClick={() => setIsHearted(!isHearted)} className='hidden miniTelefon:flex telefon:hidden items-center gap-1 bg-primaryBlue text-white border rounded-md px-2 py-[2px] ' >
+                            <BsCheck
+                                size={18}
+                                className={`heart-icon ${isHearted ? 'hearted text-white  animate-heart ' : ''}`}
+                            />
+                            <h1 className='text-[11px]' >Takip</h1>
+                        </div>
+                    ) : (
+                        <div onClick={() => setIsHearted(!isHearted)} className='hidden miniTelefon:flex telefon:hidden items-center  border rounded-md py-[3px] ps-1 pe-2 miniTelefon:pe-1 telefon:pe-2' >
+                            <FiPlus
+                                size={14}
+                                className={`heart-icon ${isHearted ? 'heartedmb-1 animate-heart' : ''}`}
+                            />
+                            <h1 className='text-[11px] ' >Takip Et</h1>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
