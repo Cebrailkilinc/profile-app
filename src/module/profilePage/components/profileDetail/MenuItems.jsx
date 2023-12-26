@@ -15,7 +15,7 @@ const TabsItemEvaluations = dynamic(() => import('./TabsItemEvaluations'), {
 })
 
 const MenuItems = ({ detailControl, isCommented }) => {
-    switch (detailControl) {
+    switch (detailControl) {        
         case "general":
             return <TabItemGeneral />;
         case "social":
