@@ -32,7 +32,7 @@ const TabsItemEvaluations = () => {
           <>
             {reviews.map((review, index) => (
 
-              < article className="p-1 miniTelefon:p-6 text-xs bg-white border-b" >
+              < article key={index} className="p-1 miniTelefon:p-6 text-xs bg-white border-b" >
                 <div className="flex items-center justify-start border-b gap-2 pb-10">
                   <div className="text-xl text-white bg-gabiGreen p-5 rounded-md">{review.rating}</div>
                   <div className="flex flex-col items-start gap-1">
