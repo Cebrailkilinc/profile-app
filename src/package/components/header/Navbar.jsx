@@ -69,7 +69,7 @@ const Navbar = () => {
                                 <div>
                                     <div className='flex items-center gap-1'>
                                         <h1 className='text-sm font-semibold' >{dropdownContent.language}</h1>
-                                        <IoCaretDown className='text-customRed' />
+                                        <IoCaretDown className='text-primaryBlue' />
                                     </div>
                                 </div>
                             </div>
