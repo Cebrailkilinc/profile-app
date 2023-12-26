@@ -1,12 +1,43 @@
 "use client"
 import React, { useState, useRef } from 'react';
+import useAlert from '../../package/hooks/useAlert';
+import Image from 'next/image';
 
 // Components
 import ProfileDetail from "./components/profileDetail/ProfileDetail";
-import SocialMedia from "./components/profileCard/SocialMedia";
-import Meeting from "../../package/components/content/Meeting";
-import ProfileCardInfo from "./components/profileCard/ProfileCardInfo";
-import ProfileCardHeader from "./components/profileCard/ProfileCardHeader"
+import Meeting from "./components/profileCard/profileSchduler/Meeting"
+import ProfileCardInfo from "./components/profileCard/profileCardInfo/ProfileCardInfo";
+import ProfileCardHeader from "./components/profileCard/profileCardHeader/ProfileCardHeader";
+import Alert from '../../package/components/alert/Alert';
+//Icons
+import { IoCopy } from 'react-icons/io5';
+
+const socialMediaItems = [
+    {
+        icon: 'https://img.icons8.com/3d-fluency/94/instagram-new.png',
+        alt: 'instagram-new',
+        nickname: '@gabriel02',
+        isUrl: false,
+    },
+    {
+        icon: 'https://img.icons8.com/ios-filled/50/twitterx--v1.png',
+        alt: 'twitter',
+        nickname: '@gabriel02',
+        isUrl: false,
+    },
+    {
+        icon: 'https://img.icons8.com/color/48/facebook.png',
+        alt: 'facebook',
+        nickname: '@gabriel02face',
+        isUrl: false,
+    },
+    {
+        icon: 'https://img.icons8.com/ios-filled/50/link--v1.png',
+        alt: 'link',
+        nickname: 'Profil Link',
+        isUrl: true,
+    },
+];
 
 
 const ProfilePageLayout = () => {
@@ -15,7 +46,30 @@ const ProfilePageLayout = () => {
     const [isCommented, setIsCommented] = useState(false);//Comment icon opening and update control
     const [isFollow, setIsFollow] = useState(false); //Social media field opening control
     const [detailControl, setDetailControl] = useState("general");
+
     const socialRef = useRef();
+    const textRef = useRef();
+
+    const { alertMessage, showAlert, alertVisible, alertType } = useAlert();
+
+    // Click and copy text
+    const handleCopySocialMediaNickMame = () => {
+        textRef.current
+            ? navigator.clipboard.writeText(textRef.current.innerText)
+            : null;
+
+        showAlert('Kopyalandı!', 'success');
+    };
+
+    // Click and copy text
+    const handleCopySocialMediaUrlAddress = () => {
+        textRef.current
+            ? navigator.clipboard.writeText('www.example.com')
+            : null;
+
+        showAlert('Kopyalandı!', 'success');
+    };
+
 
     return (
         <div className=' tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
@@ -30,13 +84,55 @@ const ProfilePageLayout = () => {
                         isCommented={isCommented}
                         isFollow={isFollow}
                         setIsFollow={setIsFollow}
-                        socialRef={socialRef }
+                        socialRef={socialRef}
                     />
-                    <SocialMedia
-                        isFollow={isFollow}
-                        setIsFollow={setIsFollow}
-                        socialRef={socialRef }
-                    />
+                    <div
+                        className={`${isFollow
+                            ? 'flex flex-col items-center justify-center shadow-lg p-3 w-full transition-all duration-300 ease-in-out bg-white text-black rounded-lg z-50 mt-3'
+                            : 'overflow-hidden transition-all h-0 duration-300 ease-in-out'
+                            }`}
+                    >
+                        <Alert
+                            alertVisible={alertVisible}
+                            alertMessage={alertMessage}
+                            alertType={alertType}
+                        />
+                        <div
+                            className={`flex items-center justify-around overflow-x-auto gap-1 w-full ${isFollow ? 'h-20' : 'overflow-hidden transition h-0'}`}
+                        >
+                            {socialMediaItems && socialMediaItems.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className='group relative flex flex-col items-center gap-1 hover:scale-105 duration-300 cursor-pointer p-1'
+                                >
+                                    <div className='relative'>
+                                        <Image
+                                            src={item.icon}
+                                            alt={item.alt}
+                                            width={20}
+                                            height={20}
+                                        />
+                                        <IoCopy
+                                            size={13}
+                                            onClick={
+                                                item.isUrl
+                                                    ? handleCopySocialMediaUrlAddress
+                                                    : handleCopySocialMediaNickMame
+                                            }
+                                            className='absolute left-9 top-0 hidden hover:opacity-80 group-hover:block duration-300 transition-all'
+                                        />
+                                    </div>
+                                    <h1
+                                        ref={textRef}
+                                        className='text-[8px] miniTelefon:text-xs font-semibold hover:scale-100'
+                                    >
+                                        {item.nickname}
+                                    </h1>
+
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                     <ProfileCardInfo />
                     <Meeting />
                 </div>

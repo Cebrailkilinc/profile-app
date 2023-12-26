@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 //Components
-import Rating  from "../../../../package/components/content/Rating"
+import Rating  from "../../../../../package/components/content/Rating"
 // Icons
 import { BiComment } from "react-icons/bi";
 import { FaBullseye, FaMessage } from "react-icons/fa6";
@@ -10,7 +10,9 @@ import { BiSolidComment } from "react-icons/bi";
 import { FiPlus } from "react-icons/fi";
 import { BsCheck } from "react-icons/bs";
 
-//This props came from <ProfilePageLayut/>  component
+
+
+//This props came from <ProfilePageLayout/>  component
 const ProfileCardHeader = (
     {
         isHearted,

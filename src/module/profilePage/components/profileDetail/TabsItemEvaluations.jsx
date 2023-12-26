@@ -1,5 +1,5 @@
 import React from 'react';
-import { maskedFullName } from "../../../../utilities/maskedFullName"
+import { maskedFullName } from "../../../../package/utilities/maskedFullName"
 //Components
 import Rating from "../../../../package/components/content/Rating";
 //Icons

@@ -3,11 +3,23 @@ import React, { useCallback } from 'react';
 import dynamic from 'next/dynamic';
 //Components
 import Loading from "../../../../package/components/content/Loading";
-import MenuItems from "./MenuItems"
 //Icons
 import { MdAccountBox } from "react-icons/md";
 import { FaCamera } from "react-icons/fa";
 import { RiTodoFill } from "react-icons/ri";
+
+// Dynamic Components
+const TabItemGeneral = dynamic(() => import('./TabItemGeneral'), {
+    loading: () => <Loading />,
+});
+const TabsItemSocial = dynamic(() => import('./TabsItemSocial'), {
+    loading: () => <Loading />,
+});
+const TabsItemEvaluations = dynamic(() => import('./TabsItemEvaluations'), {
+    loading: () => <Loading />,
+})
+
+
 
 //The props here come from the <ProfilePageLayout/> component
 const ProfileDetail = ({
@@ -16,6 +28,20 @@ const ProfileDetail = ({
     setIsCommented,
     isCommented
 }) => {
+
+    const MenuItems = ({ detailControl, isCommented }) => {
+        switch (detailControl) {
+            case "general":
+                return <TabItemGeneral />;
+            case "social":
+                return <TabsItemSocial />;
+            case "evaluation":
+                return isCommented ? <TabsItemEvaluations /> : null;
+            default:
+                return null;
+        }
+    }
+
 
     const handleEvaluationComment = useCallback(() => {
         setIsCommented(true);
@@ -30,19 +56,19 @@ const ProfileDetail = ({
         setDetailControl("social");
     }, [detailControl]);
 
-   
+
     return (
         <div className='w-full' >
             <div className='flex items-start justify-between w-full  pt-[2px]'>
                 <div onClick={handleOpenGeneralInProfileDetail} className='w-20 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center  border-b py-3 ${detailControl === "general" ? "border-tertiaryBlue  " : ""}  gap-1 cursor-pointer`}>
-                        <MdAccountBox className='text-xs telefon:text-lg miniTablet:text-xl'  />
+                        <MdAccountBox className='text-xs telefon:text-lg miniTablet:text-xl' />
                         <h1 className='text-xs telefon:text-lg miniTablet:text-xl font-semibold '>Genel</h1>
                     </div>
                 </div>
                 <div onClick={handleOpenSocialInProfileDetail} className='w-20 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center border-b py-3 ${detailControl === "social" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
-                        <FaCamera className='text-xs telefon:text-lg miniTablet:text-xl'  />
+                        <FaCamera className='text-xs telefon:text-lg miniTablet:text-xl' />
                         <h1 className='text-xs telefon:text-lg miniTablet:text-xl font-semibold '>Sosyal</h1>
                     </div>
                 </div>
@@ -55,7 +81,7 @@ const ProfileDetail = ({
             </div>
             <div>
                 {
-                    <MenuItems detailControl={detailControl} isCommented={isCommented}/>
+                    <MenuItems detailControl={detailControl} isCommented={isCommented} />
                 }
             </div>
         </div>

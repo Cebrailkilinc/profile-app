@@ -12,6 +12,7 @@ import { BsCheck } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 
 const ProfileCardInfo = () => {
+
     return (
         <div className='grid grid-cols-12 content-start w-full  gap-[2px] mt-5 text-textBoldBlue font-semibold' >
             <div className='col-span-3 flex flex-col items-center justify-start w-full gap-1 py-5 px- bg-lighBlue rounded-s-xl ' >
