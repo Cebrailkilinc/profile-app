@@ -10,6 +10,7 @@ import { FaHeart } from "react-icons/fa";
 import { MdOutlineModeComment } from "react-icons/md";
 import { BsShare } from "react-icons/bs";
 import { LuBookmark } from "react-icons/lu";
+import { IoMdHeart } from "react-icons/io"
 
 const TabsItemSocial = () => {
 
@@ -26,9 +27,9 @@ const TabsItemSocial = () => {
 
   //All videos
   const videoList = [
-    { name: '/video2.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
-    { name: '/video2.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
-    { name: '/video2.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+    { name: '/video.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+    { name: '/video.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+    { name: '/video.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
   ];
 
   //Close video modal ( <SharesVideos/> component)
