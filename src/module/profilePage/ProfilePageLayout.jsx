@@ -8,9 +8,10 @@ import ProfileDetail from "./components/profileDetail/ProfileDetail";
 import Meeting from "./components/profileCard/profileSchduler/Meeting"
 import ProfileCardInfo from "./components/profileCard/profileCardInfo/ProfileCardInfo";
 import ProfileCardHeader from "./components/profileCard/profileCardHeader/ProfileCardHeader";
-import Alert from '../../package/components/alert/Alert';
+import Alert from '../../package/components/content/Alert';
 //Icons
 import { IoCopy } from 'react-icons/io5';
+
 
 const socialMediaItems = [
     {

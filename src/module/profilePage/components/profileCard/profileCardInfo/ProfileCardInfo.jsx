@@ -24,7 +24,7 @@ const ProfileCardInfo = () => {
             </div>
             <div className='col-span-6 flex flex-col items-center w-full gap-1 py-5  bg-lighBlue ' >
                 <h1 className='text-[14px]' >Diller</h1>
-                <div className='flex items-center gap-6' >
+                <div className='flex items-center justify-center gap-6 overflow-x-auto w-11/12' >
                     <div className='flex flex-col items-center justify-center gap-' >
                         <img width="20" height="20" src="https://img.icons8.com/color/48/turkey.png" alt="turkey" />
                         <h6 className='text-[12px]' >TR</h6>

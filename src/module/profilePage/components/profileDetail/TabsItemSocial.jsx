@@ -12,7 +12,7 @@ import { BsShare } from "react-icons/bs";
 import { LuBookmark } from "react-icons/lu";
 
 const TabsItemSocial = () => {
-  
+
   const [openSharesWideScreen, setOpenSharesWideScreen] = useState(false);
   const [isHearted, setIsHearted] = useState(false);
 
@@ -51,7 +51,7 @@ const TabsItemSocial = () => {
   }
 
   return (
-    <div className='grid grid-cols-1 miniTelefon:grid-cols-2 miniTablet:grid-cols-3 gap-5 '>
+    <div className='grid grid-cols-1 miniTelefon:grid-cols-2 miniTablet:grid-cols-3 gap-5 pt-5'>
       {
         videoList && videoList.map((video, i) => (
           <div key={i} className='relative cursor-pointer  bg-white border rounded-md shadow-md shadow-white '>
