@@ -24,22 +24,24 @@ const ProfileCardInfo = () => {
             </div>
             <div className='col-span-6 flex flex-col items-center w-full gap-1 py-5  bg-lighBlue ' >
                 <h1 className='text-[14px]' >Diller</h1>
-                <div className='flex items-center justify-center gap-6 overflow-x-auto w-11/12' >
-                    <div className='flex flex-col items-center justify-center gap-' >
-                        <img width="20" height="20" src="https://img.icons8.com/color/48/turkey.png" alt="turkey" />
-                        <h6 className='text-[12px]' >TR</h6>
-                    </div>
-                    <div className='flex flex-col items-center justify-center gap-' >
-                        <img width="20" height="20" src="https://img.icons8.com/color/48/england.png" alt="england" />
-                        <h6 className='text-[12px]' >ENG</h6>
-                    </div>
-                    <div className='flex flex-col items-center justify-center gap-' >
-                        <img width="20" height="20" src="https://img.icons8.com/color/48/germany.png" alt="germany" />
-                        <h6 className='text-[12px]' >DU</h6>
-                    </div>
-                    <div className='flex flex-col items-center justify-center gap-' >
-                        <img width="20" height="20" src="https://img.icons8.com/emoji/48/saudi-arabia-emoji.png" alt="saudi-arabia-emoji" />
-                        <h6 className='text-[12px]' >ARB</h6>
+                <div className='w-11/12 overflow-x-auto gap-5' >
+                    <div className='flex items-center justify-between   w-11/12 overflow-x-auto gap-5 ' >
+                        <div className='flex flex-col items-center justify-center gap-' >
+                            <img width="20" height="20" src="https://img.icons8.com/color/48/turkey.png" alt="turkey" />
+                            <h6 className='text-[12px]' >TR</h6>
+                        </div>
+                        <div className='flex flex-col items-center justify-center gap-' >
+                            <img width="20" height="20" src="https://img.icons8.com/color/48/england.png" alt="england" />
+                            <h6 className='text-[12px]' >ENG</h6>
+                        </div>
+                        <div className='flex flex-col items-center justify-center gap-' >
+                            <img width="20" height="20" src="https://img.icons8.com/color/48/germany.png" alt="germany" />
+                            <h6 className='text-[12px]' >DU</h6>
+                        </div>
+                        <div className='flex flex-col items-center justify-center gap-' >
+                            <img width="20" height="20" src="https://img.icons8.com/emoji/48/saudi-arabia-emoji.png" alt="saudi-arabia-emoji" />
+                            <h6 className='text-[12px]' >ARB</h6>
+                        </div>
                     </div>
                 </div>
             </div>

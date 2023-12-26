@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 //Components
-import Rating  from "../../../../../package/components/content/Rating"
+import Rating from "../../../../../package/components/content/Rating"
 // Icons
 import { BiComment } from "react-icons/bi";
 import { FaBullseye, FaMessage } from "react-icons/fa6";
@@ -21,9 +21,9 @@ const ProfileCardHeader = (
         setDetailControl,
         setIsCommented,
         isCommented,
-        isFollow, 
+        isFollow,
         setIsFollow,
-        socialRef 
+        socialRef
     }) => {
 
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
@@ -53,17 +53,17 @@ const ProfileCardHeader = (
                     <h1 className='text-start text-[13px] telefon:text-[18px]' >Seda <br /> Odabaşı Dinç</h1>
                     <h3 className='text-textGray text-xs'>Uzman, Klinik Psikoloji</h3>
                 </div>
-                <div ref={socialRef} className='deneme absolute bottom-24  miniTelefon:bottom-32 left-0 w-full flex gap-3  items-center justify-end cursor-pointer'>
+                <div ref={socialRef} className='absolute bottom-24  miniTelefon:bottom-32 left-0 w-full flex gap-3  items-center justify-end cursor-pointer'>
                     {isHearted ? (
-                        <div onClick={() => setIsHearted(!isHearted)} className='flex miniTelefon:hidden telefon:flex items-center gap-1 bg-primaryBlue text-white border rounded-md px-2 py-[2px] ' >
+                        <div onClick={() => setIsHearted(!isHearted)} className='w-20 flex miniTelefon:hidden  items-center justify-center py-1 gap-1 bg-primaryBlue text-white border rounded-md  ' >
                             <BsCheck
                                 size={18}
                                 className={`heart-icon ${isHearted ? 'hearted text-white  animate-heart ' : ''}`}
                             />
-                          <h1 className='text-[11px]' >Takip</h1>
+                            <h1 className='text-[11px]' >Takip</h1>
                         </div>
                     ) : (
-                        <div onClick={() => setIsHearted(!isHearted)} className='flex miniTelefon:hidden telefon:flex items-center  border rounded-md py-[3px] ps-1 pe-2 miniTelefon:pe-1 telefon:pe-2
+                        <div onClick={() => setIsHearted(!isHearted)} className='w-20 flex miniTelefon:hidden  items-center justify-center py-1  border rounded-md 
                         text-white bg-primaryBlue' >
                             <FiPlus
                                 size={14}
@@ -72,7 +72,7 @@ const ProfileCardHeader = (
                             <h1 className='text-[11px] miniTelefon:hidden telefon:block ' >Takip Et</h1>
                         </div>
                     )}
-                    <BsBoxArrowUp  onClick={() => { setIsFollow(!isFollow) }} className={`${isFollow ? "text-primaryBlue" : ""} hover:opacity-60`} />
+                    <BsBoxArrowUp onClick={() => { setIsFollow(!isFollow) }} className={`${isFollow ? "text-primaryBlue" : ""} hover:opacity-60`} />
                 </div>
                 <div className='miniTelefon:absolute py-5 miniTelefon:py-0 miniTelefon:bottom-0 left-0 w-full flex gap-3 items-center justify-end cursor-pointer'>
                     <div className='flex items-center gap-1 mb-1 ' onClick={handleOpenCommentDetailPage} >
@@ -90,20 +90,20 @@ const ProfileCardHeader = (
                     </div>
                 </div>
                 <div className='absolute bottom-6 miniTelefon:bottom-10 telefon:bottom-1 tablet:bottom-10 flex items-center gap-2 text-xs cursor-pointer' >
-                    <button className='bg-primaryGreen hover:opacity-80 text-white  rounded-md  transition duration-300 ease-in-out flex items-center px-3 py-1 gap-1'>
+                    <button className='bg-primaryGreen w-20  hover:opacity-80 text-white  rounded-md  transition duration-300 ease-in-out flex items-center justify-center py-1  gap-1'>
                         <FaMessage className='text-gray-100 hover:opacity-90 ' />
                         <h1 className='hover:opacity-90 text-[10px]' >Mesaj</h1>
                     </button>
                     {isHearted ? (
-                        <div onClick={() => setIsHearted(!isHearted)} className='hidden miniTelefon:flex telefon:hidden items-center gap-1 bg-primaryBlue text-white border rounded-md px-2 py-[2px] ' >
+                        <div onClick={() => setIsHearted(!isHearted)} className='hidden miniTelefon:flex items-center justify-center w-20 gap-1 bg-primaryBlue text-white border rounded-md py-1 ' >
                             <BsCheck
-                                size={18}
+                                size={16}
                                 className={`heart-icon ${isHearted ? 'hearted text-white  animate-heart ' : ''}`}
                             />
                             <h1 className='text-[11px]' >Takip</h1>
                         </div>
                     ) : (
-                        <div onClick={() => setIsHearted(!isHearted)} className='hidden miniTelefon:flex telefon:hidden items-center  border rounded-md py-[3px] ps-1 pe-2 miniTelefon:pe-1 telefon:pe-2' >
+                        <div onClick={() => setIsHearted(!isHearted)} className='hidden miniTelefon:flex items-center justify-center  gap-1 w-20 bg-primaryBlue text-white  border rounded-md py-1' >
                             <FiPlus
                                 size={14}
                                 className={`heart-icon ${isHearted ? 'heartedmb-1 animate-heart' : ''}`}
