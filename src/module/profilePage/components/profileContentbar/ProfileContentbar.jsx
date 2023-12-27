@@ -62,20 +62,20 @@ const ProfileContentbar = ({
             <div className='flex items-start justify-between w-full  pt-[2px]'>
                 <div onClick={handleOpenGeneralInProfileDetail} className='w-20 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center  border-b py-3 ${detailControl === "general" ? "border-tertiaryBlue  " : ""}  gap-1 cursor-pointer`}>
-                        <MdAccountBox className='text-xs telefon:text-lg miniTablet:text-xl' />
-                        <h1 className='text-xs telefon:text-lg miniTablet:text-xl font-semibold '>Genel</h1>
+                        <MdAccountBox className='text-xs miniTelefon:text-sm telefon:text-lg miniTablet:text-xl' />
+                        <h1 className='text-xs miniTelefon:text-sm telefon:text-lg miniTablet:text-xl font-semibold '>Genel</h1>
                     </div>
                 </div>
                 <div onClick={handleOpenSocialInProfileDetail} className='w-20 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center border-b py-3 ${detailControl === "social" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
-                        <FaCamera className='text-xs telefon:text-lg miniTablet:text-xl' />
-                        <h1 className='text-xs telefon:text-lg miniTablet:text-xl font-semibold '>Sosyal</h1>
+                        <FaCamera className='text-xs miniTelefon:text-sm telefon:text-lg miniTablet:text-xl' />
+                        <h1 className='text-xs miniTelefon:text-sm telefon:text-lg miniTablet:text-xl font-semibold '>Sosyal</h1>
                     </div>
                 </div>
                 <div onClick={handleEvaluationComment} className='w-28 miniTelefon:w-full '>
                     <div className={`flex items-center justify-start miniTelefon:justify-center border-b py-3 ${detailControl === "evaluation" ? "border-tertiaryBlue " : ""}  gap-1 cursor-pointer`}>
-                        <RiTodoFill className='text-xs telefon:text-lg miniTablet:text-xl' />
-                        <h1 className='text-xs telefon:text-lg miniTablet:text-xl font-semibold '>Değerlendirme</h1>
+                        <RiTodoFill className='text-xs miniTelefon:text-sm telefon:text-lg miniTablet:text-xl' />
+                        <h1 className='text-xs miniTelefon:text-sm telefon:text-lg miniTablet:text-xl font-semibold '>Değerlendirme</h1>
                     </div>
                 </div>
             </div>

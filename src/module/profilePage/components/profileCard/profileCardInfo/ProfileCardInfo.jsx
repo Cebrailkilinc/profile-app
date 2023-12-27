@@ -52,7 +52,7 @@ const ProfileCardHeader = (
                 />
                 <div className='w-full flex flex-col justify-between '>
                     <div className='flex flex-col justify-start items-start gap-1'>
-                        <h1 className='text-start text-[13px] telefon:text-[18px]' >Seda <br /> Odabaşı Dinç</h1>
+                        <h1 className='text-start text-[18px] telefon:text-[18px]' >Seda <br /> Odabaşı Dinç</h1>
                         <h3 className='text-textGray text-xs'>Uzman, Klinik Psikoloji</h3>
                     </div>
                     <div ref={socialRef} className='absolute bottom-24  miniTelefon:bottom-32 left-0 w-full flex gap-3  items-center justify-end cursor-pointer'>

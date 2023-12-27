@@ -26,7 +26,7 @@ const TabsItemEvaluations = () => {
       <section className="tablet:h-[calc(100vh_-_200px)] tablet:overflow-y-auto pt-2 px-2">
         <div className='flex items-center gap-2  pb-5 mt-3 ' >
           <RiTodoLine size={25} />
-          <h1 className='text-[18px] font-medium ' >Değerlendirmeler ({reviews.length})</h1>
+          <h1 className='text-[15px] font-medium ' >Değerlendirmeler ({reviews.length})</h1>
         </div>
         <div className="bg-white max-w-full mx-auto py-5 px-3 rounded-lg">
           <>
