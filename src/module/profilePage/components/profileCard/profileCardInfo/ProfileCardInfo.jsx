@@ -26,6 +26,7 @@ const ProfileCardHeader = (
         setIsFollow,
         socialRef
     }) => {
+        //Cebrail
 
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
     const handleOpenCommentDetailPage = useCallback((event) => {
