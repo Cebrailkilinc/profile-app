@@ -22,7 +22,7 @@ const TabsItemEvaluations = dynamic(() => import('./TabsItemEvaluations'), {
 
 
 //The props here come from the <ProfilePageLayout/> component
-const ProfileDetail = ({
+const ProfileContentbar = ({
     detailControl,
     setDetailControl,
     setIsCommented,
@@ -88,4 +88,4 @@ const ProfileDetail = ({
     )
 }
 
-export default ProfileDetail
+export default ProfileContentbar
