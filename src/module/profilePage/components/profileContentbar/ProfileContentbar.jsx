@@ -26,7 +26,9 @@ const ProfileContentbar = ({
     detailControl,
     setDetailControl,
     setIsCommented,
-    isCommented
+    isCommented,
+    isFollow, 
+    setIsFollow
 }) => {
 
     const MenuItems = ({ detailControl, isCommented }) => {
@@ -34,7 +36,7 @@ const ProfileContentbar = ({
             case "general":
                 return <TabItemGeneral />;
             case "social":
-                return <TabsItemSocial />;
+                return <TabsItemSocial  isFollow={isFollow} setIsFollow={setIsFollow} />;
             case "evaluation":
                 return isCommented ? <TabsItemEvaluations /> : null;
             default:
