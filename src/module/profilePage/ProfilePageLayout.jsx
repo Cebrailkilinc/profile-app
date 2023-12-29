@@ -141,7 +141,10 @@ const ProfilePageLayout = () => {
                         detailControl={detailControl}
                         setDetailControl={setDetailControl}
                         setIsCommented={setIsCommented}
-                        isCommented={isCommented} />
+                        isCommented={isCommented}
+                        isFollow={isFollow}
+                        setIsFollow={setIsFollow}
+                        />
                 </div>
             </div>
         </div>
