@@ -52,10 +52,10 @@ const ProfileCardHeader = (
                 />
                 <div className='w-full flex flex-col justify-between '>
                     <div className='flex flex-col justify-start items-start gap-1'>
-                        <h1 className='text-start text-[18px] telefon:text-[18px]' >Seda <br /> Odabaşı Dinç</h1>
+                        <h1 className='text-start text-[20px] telefon:text-[22px]' >Seda <br /> Odabaşı Dinç</h1>
                         <h3 className='text-textGray text-xs'>Uzman, Klinik Psikoloji</h3>
                     </div>
-                    <div ref={socialRef} className='absolute bottom-24  miniTelefon:bottom-32 left-0 w-full flex gap-3  items-center justify-end cursor-pointer'>
+                    <div ref={socialRef} className='absolute bottom-28  miniTelefon:bottom-32 left-0 w-full flex gap-3  items-center justify-end cursor-pointer'>
                         {isHearted ? (
                             <div onClick={() => setIsHearted(!isHearted)} className='w-20 flex miniTelefon:hidden  items-center justify-center py-1 gap-1 bg-primaryBlue text-white border rounded-md  ' >
                                 <BsCheck
@@ -91,7 +91,7 @@ const ProfileCardHeader = (
                             }
                         </div>
                     </div>
-                    <div className='absolute bottom-6 miniTelefon:bottom-10 telefon:bottom-1 tablet:bottom-10 flex items-center gap-2 text-xs cursor-pointer' >
+                    <div className='absolute bottom-6 miniTelefon:bottom-10 telefon:bottom-1 tablet:bottom-9 flex items-center gap-2 text-xs cursor-pointer' >
                         <button className='bg-primaryGreen w-20  hover:opacity-80 text-white  rounded-md  transition duration-300 ease-in-out flex items-center justify-center py-1  gap-1'>
                             <FaMessage className='text-gray-100 hover:opacity-90 ' />
                             <h1 className='hover:opacity-90 text-[10px]' >Mesaj</h1>

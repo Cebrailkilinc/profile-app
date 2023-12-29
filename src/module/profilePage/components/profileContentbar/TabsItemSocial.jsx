@@ -11,6 +11,12 @@ import { MdOutlineModeComment } from "react-icons/md";
 import { BsShare } from "react-icons/bs";
 import { LuBookmark } from "react-icons/lu";
 import { IoMdHeart } from "react-icons/io"
+import { Mousewheel, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FiPlus } from "react-icons/fi";
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const TabsItemSocial = () => {
 
@@ -70,11 +76,11 @@ const TabsItemSocial = () => {
                 muted={true}
               />
             </div>
-            <button onClick={() => openModal(video)} className='hover:opacity-90 absolute right-2  bottom-40 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl' >
+            <button onClick={() => openModal(video)} className='hover:opacity-90 absolute right-2  bottom-28 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl' >
               <CiPlay1 />
               <h1 className='text-sm' >İzle</h1>
             </button>
-            <div className='flex flex-col gap-2 text-start pt-5 h-40 overflow-y-auto'>
+            <div className='flex flex-col gap-2 text-start pt-5 h-28 overflow-y-auto'>
               <h1 className='text-xs font-semibold px-2'>Video Mükemmeldi! İzlemeyenler Ne Kaçırıyor? 🌟🎬</h1>
               <div >
                 <p className='text-[10px] px-2'>
@@ -99,9 +105,31 @@ const TabsItemSocial = () => {
 
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50'>
           <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
-            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-10 tablet:right-5'>
+            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-10 tablet:right-80 bg-black rounded-full p-1 hover:bg-white hover:text-black duration-300'>
               <IoMdClose onClick={closeModal} size={25} className='hover:opacity-80' />
             </span>
+            <div className='text-white'>
+              <div className='flex items-center justify-between px-3  py-2 ' >
+                <div className='flex items-center gap-2'>
+                  <img
+                    className='h-auto rounded-full  w-6'
+                    src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee'
+                  />
+                  <div className='text-start text-[9px]' >
+                    <h1>Seda Odabaşı</h1>
+                    <h3 className='text-textGray'>Uzman, Klinik Psikoloji</h3>
+                  </div>
+                </div>
+                <div className='w-20 flex   items-center justify-center py-1  border rounded-md 
+                        text-white bg-none  hover:bg-white hover:text-black duration-300 cursor-pointer ' >
+                  <FiPlus
+                    size={14}
+                    className={`heart-icon ${isHearted ? 'heartedmb-1 animate-heart' : ''}`}
+                  />
+                  <h1 className='text-[11px]  telefon:block' >Takip Et</h1>
+                </div>
+              </div>
+            </div>
             <div className='video-container'>
               <ReactPlayer
                 loop={false}
@@ -152,8 +180,6 @@ const TabsItemSocial = () => {
         </div>
       }
     </div>
-
-
   )
 }
 
