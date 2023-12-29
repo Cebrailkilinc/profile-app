@@ -76,18 +76,14 @@ const TabsItemSocial = () => {
                 muted={true}
               />
             </div>
-            <button onClick={() => openModal(video)} className='hover:opacity-90 absolute right-2  bottom-28 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl' >
+            <button onClick={() => openModal(video)} className='hover:opacity-90 absolute right-2  bottom-20 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl' >
               <CiPlay1 />
               <h1 className='text-sm' >İzle</h1>
             </button>
-            <div className='flex flex-col gap-2 text-start pt-5 h-28 overflow-y-auto'>
+            <div className='flex flex-col gap-2 text-start pt-5 h-20 overflow-y-auto'>
               <h1 className='text-xs font-semibold px-2'>Video Mükemmeldi! İzlemeyenler Ne Kaçırıyor? 🌟🎬</h1>
               <div >
-                <p className='text-[10px] px-2'>
-                  Bu başlık, olumlu bir ifade içeriyor ve izleyenleri meraklandıracak bir unsur taşıyor.
-                  Eğer daha spesifik bir konsept veya video içeriği varsa,
-                  başlığı buna göre özelleştirebilirsiniz.
-                </p>
+                
               </div>
             </div>
             <div className='bg-gray-200 text-gray-800 text-[10px] text-end px-2 border-t rounded-b-md' >
@@ -105,7 +101,7 @@ const TabsItemSocial = () => {
 
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50'>
           <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
-            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-10 tablet:right-80 bg-black'>
+            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-10 tablet:right-80 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
               <IoMdClose onClick={closeModal} size={25} className='hover:opacity-80' />
             </span>
             <div className='text-white'>
