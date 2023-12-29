@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ReactPlayer from 'react-player/lazy';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 //Icons
 import { BsFilePlayFill } from "react-icons/bs";
 import { CiPlay1 } from "react-icons/ci";
@@ -23,9 +23,12 @@ import { IoMdWallet } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { GrLanguage } from "react-icons/gr";
 
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Mousewheel, Pagination } from 'swiper/modules';
 const TabsItemSocial = ({ isFollow, setIsFollow }) => {
 
-  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(true);
+  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(false);
   const [isHearted, setIsHearted] = useState(false);
 
   //currently playing video in <SharesVideos/> compoment
@@ -63,6 +66,7 @@ const TabsItemSocial = ({ isFollow, setIsFollow }) => {
       videoRef.current.pause();
     }
   }
+
 
   return (
     <div className='grid grid-cols-1 miniTelefon:grid-cols-2 miniTablet:grid-cols-3 gap-5 pt-5 '>
@@ -111,101 +115,117 @@ const TabsItemSocial = ({ isFollow, setIsFollow }) => {
       {/* open video full screen */}
       {openSharesWideScreen &&
 
-        <div className='fixed  tablet:top-20 inset-0 flex flex-col items-center justify-between gap-10 bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50 h-screen overflow-y-auto'>
-          {
-            videoList.map((item, i) => {
-              return (
-                <div className='mt-20'>
-                  <div className=' w-full max-w-xl bg-secondaryGray   shadow-xl rounded-lg'>
+        <div className='fixed  tablet:top- inset-0 flex flex-col items-center justify-between gap-10 bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50 h-screen overflow-y-auto'>
+          <div onClick={closeModal} >X</div>
+          <Swiper
+            direction={'vertical'}
+            slidesPerView={1}
+            spaceBetween={30}
+            mousewheel={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Mousewheel, Pagination]}
+            className="mySwiper"
+          >
+            {
+              videoList.map((item, i) => {
+                return (
+                  <SwiperSlide>
+                    <div className='mt-14'>
+                      <div className=' w-full max-w-xl bg-secondaryGray   shadow-xl rounded-lg'>
 
-                  
-                    <div className=''>
-                      <div className='text-white flex item-center justify-between p-3  bg-white rounded-t-md ' >
-                        <div className='flex items-center gap-2  text-xs text-black ' >
-                          <FaUserCircle className='text-3xl text-gray-300' />
-                          <div className='flex flex-col items-start '>
-                            <h1 className='font-semibold' > Cebrail Kılınç</h1>
-                            <h3 className='text-textGray text-[8px] ml-[2px]'>Uzman, Klinik Psikoloji</h3>
-                          </div>
-                        </div>
-                        <div>
-                          <div className='w-full  cursor-pointer'>
-                            {isFollow ? (
-                              <div onClick={() => setIsFollow(!isFollow)} className='w-20 flex   items-center justify-center py-1 gap-1 bg-primaryPink text-white border rounded-md  ' >
-                                <BsCheck
-                                  size={16}
-                                  className={`heart-icon ${isFollow ? 'hearted text-white  animate-heart ' : ''}`}
-                                />
-                                <h1 className='text-[11px]' >Takip</h1>
+
+                        <div className=''>
+                          <div className='text-white flex item-center justify-between p-3  bg-white rounded-t-md ' >
+                            <div className='flex items-center gap-2  text-xs text-black ' >
+                              <FaUserCircle className='text-3xl text-gray-300' />
+                              <div className='flex flex-col items-start '>
+                                <h1 className='font-semibold' > Cebrail Kılınç</h1>
+                                <h3 className='text-textGray text-[8px] ml-[2px]'>Uzman, Klinik Psikoloji</h3>
                               </div>
-                            ) : (
-                              <div onClick={() => setIsFollow(!isFollow)} className='w-20 flex items-center justify-center py-1  border rounded-md 
-                          text-white bg-primaryPink' >
-                                <FiPlus
-                                  size={14}
-                                  className={`heart-icon ${isFollow ? 'heartedmb-1 animate-heart' : ''}`}
-                                />
-                                <h1 className='text-[11px] '>Takip Et</h1>
-                              </div>
-                            )}
-
-                          </div>
-                        </div>
-                      </div>
-                      <div className='video-container'>
-                        <ReactPlayer
-                          loop={false}
-                          playsInline
-                          light={false}
-                          controls={true}
-                          url={[currentVideo.name]}
-                          width='100%'
-                          height='100%'
-                          playing={true}
-                          muted={true}
-                          style={{ borderRadius: '20px' }}
-                        />
-                      </div>
-
-                    </div>
-                    <div className='flex flex-col items-start justify-between p-3'>
-                      <div className='flex flex-col gap-2'>
-                        <div className='w-full flex gap-3 items-start justify-between cursor-pointer text-white'>
-                          <div className='flex items-center gap-2' >
-                            <div>
-                              {isHearted ? (
-                                <IoMdHeart
-                                  size={18}
-                                  onClick={() => (!isHearted)}
-                                  className={`heart-icon h-4 w-4  ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`}
-                                />
-                              ) : (
-                                <FaHeart
-                                  onClick={() => setIsHearted(!isHearted)}
-                                  className={`heart-icon h-4 w-4  ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`}
-                                />
-                              )}
                             </div>
-                            <MdOutlineModeComment className={`h-4 w-4 hover:opacity-60`} />
-                            <BsShare className={`h-4 w-4 mb-1 hover:opacity-60`} />
+                            <div>
+                              <div className='w-full  cursor-pointer'>
+                                {isFollow ? (
+                                  <div onClick={() => setIsFollow(!isFollow)} className='w-20 flex   items-center justify-center py-1 gap-1 bg-primaryPink text-white border rounded-md  ' >
+                                    <BsCheck
+                                      size={16}
+                                      className={`heart-icon ${isFollow ? 'hearted text-white  animate-heart ' : ''}`}
+                                    />
+                                    <h1 className='text-[11px]' >Takip</h1>
+                                  </div>
+                                ) : (
+                                  <div onClick={() => setIsFollow(!isFollow)} className='w-20 flex items-center justify-center py-1  border rounded-md 
+                          text-white bg-primaryPink' >
+                                    <FiPlus
+                                      size={14}
+                                      className={`heart-icon ${isFollow ? 'heartedmb-1 animate-heart' : ''}`}
+                                    />
+                                    <h1 className='text-[11px] '>Takip Et</h1>
+                                  </div>
+                                )}
+
+                              </div>
+                            </div>
                           </div>
-                          < LuBookmark className={`h-4 w-4 mb-1 hover:opacity-60`} />
+                          <div className='video-container'>
+                            <ReactPlayer
+                              loop={false}
+                              playsInline
+                              light={false}
+                              controls={true}
+                              url={[currentVideo.name]}
+                              width='100%'
+                              height='100%'
+                              playing={true}
+                              muted={true}
+                              style={{ borderRadius: '20px' }}
+                            />
+                          </div>
+
                         </div>
-                        <h3 className='text-xs text-start text-white'>23 beğenme, 12 yorum</h3>
-                        <div className='flex items-start gap-2 text-xs'>
-                          <h3 className='text-white font-semibold'>cbrlKilinc</h3>
-                          <p className='text-start text-white font-light'>
-                            This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                          </p>
+                        <div className='flex flex-col items-start justify-between p-3'>
+                          <div className='flex flex-col gap-2'>
+                            <div className='w-full flex gap-3 items-start justify-between cursor-pointer text-white'>
+                              <div className='flex items-center gap-2' >
+                                <div>
+                                  {isHearted ? (
+                                    <IoMdHeart
+                                      size={18}
+                                      onClick={() => (!isHearted)}
+                                      className={`heart-icon h-4 w-4  ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`}
+                                    />
+                                  ) : (
+                                    <FaHeart
+                                      onClick={() => setIsHearted(!isHearted)}
+                                      className={`heart-icon h-4 w-4  ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`}
+                                    />
+                                  )}
+                                </div>
+                                <MdOutlineModeComment className={`h-4 w-4 hover:opacity-60`} />
+                                <BsShare className={`h-4 w-4 mb-1 hover:opacity-60`} />
+                              </div>
+                              < LuBookmark className={`h-4 w-4 mb-1 hover:opacity-60`} />
+                            </div>
+                            <h3 className='text-xs text-start text-white'>23 beğenme, 12 yorum</h3>
+                            <div className='flex items-start gap-2 text-xs'>
+                              <h3 className='text-white font-semibold'>cbrlKilinc</h3>
+                              <p className='text-start text-white font-light'>
+                                This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              )
-            })
-          }
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
         </div>
+
 
       }
     </div>
