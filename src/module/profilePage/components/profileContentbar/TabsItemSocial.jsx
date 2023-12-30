@@ -101,7 +101,7 @@ const TabsItemSocial = () => {
 
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50'>
           <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
-            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-10 tablet:right-80 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
+            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-7 tablet:right-80 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
               <IoMdClose onClick={closeModal} size={25} className='hover:opacity-80' />
             </span>
             <div className='text-white'>
