@@ -56,7 +56,7 @@ const TabsItemSocial = () => {
       videoRef.current.pause();
     }
   }
-
+ //Cebrail
   return (
     <div className='grid grid-cols-1 miniTelefon:grid-cols-2 miniTablet:grid-cols-3 gap-5 pt-5'>
       {
