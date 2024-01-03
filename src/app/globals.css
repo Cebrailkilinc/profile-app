@@ -143,3 +143,9 @@
   user-select: none;
 }
 
+ .video-modal::-webkit-scrollbar {
+  display: none;
+}
+.comment::-webkit-scrollbar {
+  display: none;
+}

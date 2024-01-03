@@ -126,7 +126,7 @@ const TabsItemSocial = () => {
                 </div>
               </div>
             </div>
-            <div className='h-[50vh] telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
+            <div className='video-modal h-[50vh] telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
               {
                 videoList && videoList.map((item, i) => (
                   <div className='snap-start snap-always py-2 h-[100%]' key={item.id} ref={item.id === currentVideoIndex ? scrollToIndexRef : null} > {/**************CONTENT************ */}
@@ -143,7 +143,7 @@ const TabsItemSocial = () => {
                         muted={true}
                       />
                     </div>
-                    <div className='w-full h-1/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
+                    <div className='comment w-full h-1/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
                       <div className='w-full flex flex-col gap-2'>
                         <div className='w-full flex gap-3 items-start justify-between cursor-pointer text-white'>
                           <div className='flex items-center gap-2' >
