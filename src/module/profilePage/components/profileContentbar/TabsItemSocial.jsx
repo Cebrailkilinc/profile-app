@@ -101,7 +101,7 @@ const TabsItemSocial = () => {
 
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50'>
           <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
-            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-7 miniTablet:right-3 tablet:right-80 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
+            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-7 miniTablet:right-3  rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
               <IoMdClose onClick={closeModal} size={25} className='hover:opacity-80' />
             </span>
             <div className='text-white'>
@@ -130,7 +130,7 @@ const TabsItemSocial = () => {
               {
                 videoList && videoList.map((item, i) => (
                   <div className='snap-start snap-always py-2 h-[100%]' key={item.id} ref={item.id === currentVideoIndex ? scrollToIndexRef : null} > {/**************CONTENT************ */}
-                    <div className='h-5/6'>
+                    <div className='h-4/6 bg-primaryGray'>
                       <ReactPlayer
                         loop={false}
                         playsInline
@@ -143,7 +143,7 @@ const TabsItemSocial = () => {
                         muted={true}
                       />
                     </div>
-                    <div className='comment w-full h-1/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
+                    <div className='comment w-full h-2/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
                       <div className='w-full flex flex-col gap-2'>
                         <div className='w-full flex gap-3 items-start justify-between cursor-pointer text-white'>
                           <div className='flex items-center gap-2' >
