@@ -125,7 +125,7 @@ const ProfileCardHeader = (
                         <h6 className='text-[12px]' >28</h6>
                     </div>
                 </div>
-                <div className='col-span-4 flex flex-col w-full gap-1 py-5 px- bg-lighBlue rounded-e-xl' >
+                <div className='col-span-4 flex flex-col w-full gap-1 py-5  bg-lighBlue' >
                     <h1 className='text-[14px] ' >Diller</h1>
                     <div className='flex items-center justify-center gap-2' >
                         <GrLanguage />
