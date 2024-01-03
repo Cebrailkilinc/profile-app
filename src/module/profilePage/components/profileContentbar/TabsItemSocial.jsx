@@ -22,7 +22,7 @@ const videoList = [
 
 const TabsItemSocial = () => {
 
-  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(true);
+  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(false);
   const [isHearted, setIsHearted] = useState(false);
 
   //currently playing video in <SharesVideos/> compoment
@@ -42,6 +42,7 @@ const TabsItemSocial = () => {
   const openModal = (currentVideo) => {
     setOpenSharesWideScreen(true);
     setCurrentVideoIndex(currentVideo)
+    document.body.style.overflowY = "hidden"
     //Play video
     if (videoRef.current) {
       videoRef.current.play();
@@ -51,6 +52,7 @@ const TabsItemSocial = () => {
   //Open video modal ( <SharesVideos/> component)
   const closeModal = () => {
     setOpenSharesWideScreen(false);
+    document.body.style.overflowY = "auto"
     // Pause video
     if (videoRef.current) {
       videoRef.current.pause();
@@ -143,7 +145,7 @@ const TabsItemSocial = () => {
                         muted={true}
                       />
                     </div>
-                    <div className='comment w-full h-2/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
+                    <div className='comment  w-full h-2/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
                       <div className='w-full flex flex-col gap-2'>
                         <div className='w-full flex gap-3 items-start justify-between cursor-pointer text-white'>
                           <div className='flex items-center gap-2' >
