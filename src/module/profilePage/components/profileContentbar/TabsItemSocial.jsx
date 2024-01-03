@@ -1,4 +1,4 @@
-import React, { useState, useRef,useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
 //Icons
@@ -13,13 +13,13 @@ import { LuBookmark } from "react-icons/lu";
 import { IoMdHeart } from "react-icons/io"
 import { FiPlus } from "react-icons/fi";
 
-  //All videos
-  const videoList = [
-    { id:0, name: '/video.mp4', caption: 'Video 1', desc: "Bugüns çok özel bir video hazırladım sizler için umarım seversiniz." },
-    { id:1, name: '/video.mp4', caption: 'Video 1', desc: "Bugünss çok özel bir video hazırladım sizler için umarım seversiniz." },
-    { id:2, name: '/video.mp4', caption: 'Video 1', desc: "Bugünss çok özel bir video hazırladım sizler için umarım seversiniz." },
-  ];
-  
+//All videos
+const videoList = [
+  { id: 0, name: '/video.mp4', caption: 'Video 1', desc: "Bugüns çok özel bir video hazırladım sizler için umarım seversiniz." },
+  { id: 1, name: '/video.mp4', caption: 'Video 1', desc: "Bugünss çok özel bir video hazırladım sizler için umarım seversiniz." },
+  { id: 2, name: '/video.mp4', caption: 'Video 1', desc: "Bugünss çok özel bir video hazırladım sizler için umarım seversiniz." },
+];
+
 const TabsItemSocial = () => {
 
   const [openSharesWideScreen, setOpenSharesWideScreen] = useState(true);
@@ -76,7 +76,7 @@ const TabsItemSocial = () => {
                 muted={true}
               />
             </div>
-            <button onClick={()=>{openModal(video.id)}} className='hover:opacity-90 absolute right-2  bottom-20 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl' >
+            <button onClick={() => { openModal(video.id) }} className='hover:opacity-90 absolute right-2  bottom-20 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl' >
               <CiPlay1 />
               <h1 className='text-sm' >İzle</h1>
             </button>
@@ -101,7 +101,7 @@ const TabsItemSocial = () => {
 
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm  tablet:bg-none z-50'>
           <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
-            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-7 tablet:right-80 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
+            <span className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-7 miniTablet:right-3 tablet:right-80 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
               <IoMdClose onClick={closeModal} size={25} className='hover:opacity-80' />
             </span>
             <div className='text-white'>
@@ -126,11 +126,11 @@ const TabsItemSocial = () => {
                 </div>
               </div>
             </div>
-            <div className='h-[50vh] overflow-y-auto snap-mandatory snap-y'>
+            <div className='h-[50vh] telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
               {
-                videoList && videoList.map((item,i) => (
-                  <div  className='snap-start snap-always py-1' key={item.id} ref={item.id === currentVideoIndex ? scrollToIndexRef : null} > {/**************CONTENT************ */}
-                    <div className=''>
+                videoList && videoList.map((item, i) => (
+                  <div className='snap-start snap-always py-2 h-[100%]' key={item.id} ref={item.id === currentVideoIndex ? scrollToIndexRef : null} > {/**************CONTENT************ */}
+                    <div className='h-5/6'>
                       <ReactPlayer
                         loop={false}
                         playsInline
@@ -141,11 +141,10 @@ const TabsItemSocial = () => {
                         height='100%'
                         playing={true}
                         muted={true}
-                        style={{ borderRadius: '20px' }}
                       />
                     </div>
-                    <div className='w-full flex flex-col items-start justify-between p-3'>
-                      <div className='w-full  flex flex-col gap-2'>
+                    <div className='w-full h-1/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
+                      <div className='w-full flex flex-col gap-2'>
                         <div className='w-full flex gap-3 items-start justify-between cursor-pointer text-white'>
                           <div className='flex items-center gap-2' >
                             <div>
