@@ -73,9 +73,9 @@ const ProfilePageLayout = () => {
 
 
     return (
-        <div style={{overflowY:"hidden"}} className=' tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
+        <div className=' tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
             <div className=' max-w-[584px] w-full  miniTablet:max-w-[768px] tablet:max-w-[1920px] mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
-                <div id='fake-window' className='overflow-hidden tablet:h-[calc(100vh_-_140px)] bg-white w-full tablet:w-2/5 laptop:max-w-[600px] p-3 border shadow-lg rounded-3xl'>
+                <div id='fake-window' className=' tablet:h-[calc(100vh_-_140px)] overflow-y-auto bg-white w-full tablet:w-2/5 laptop:max-w-[600px] p-3 border shadow-lg rounded-3xl'>
                     <ProfileCardInfo
                         isHearted={isHearted}
                         setIsHearted={setIsHearted}

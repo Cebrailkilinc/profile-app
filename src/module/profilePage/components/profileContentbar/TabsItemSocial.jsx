@@ -14,10 +14,9 @@ import { VList, VGrid } from 'virtua';
 
 //All videos
 const videoList = [
-  { id: 0, name: '/video.mp4', caption: 'Video 1', desc: "Bugüns çok özel bir video hazırladım sizler için umarım seversiniz." },
-  { id: 1, name: '/video.mp4', caption: 'Video 1', desc: "Bugünss çok özel bir video hazırladım sizler için umarım seversiniz." },
-  { id: 2, name: '/video.mp4', caption: 'Video 1', desc: "Bugünssw çok özel bir video hazırladım sizler için umarım seversiniz." },
- 
+  { id: 0, name: '/video4.mp4', caption: 'Video 1', desc: "Bugüns çok özel bir video hazırladım sizler için umarım seversiniz." },
+  { id: 1, name: '/video4.mp4', caption: 'Video 1', desc: "Bugünss çok özel bir video hazırladım sizler için umarım seversiniz." },
+  { id: 2, name: '/video4.mp4', caption: 'Video 1', desc: "Bugünssw çok özel bir video hazırladım sizler için umarım seversiniz." },
 ];
 
 const TabsItemSocial = () => {
@@ -28,38 +27,29 @@ const TabsItemSocial = () => {
   const videoRef = useRef(null);
   const scrollToIndexRef = useRef(null);
 
-  useEffect(() => {
-    if (scrollToIndexRef.current) {
-      scrollToIndexRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Switching to new video when scrolling
+  useEffect(() => {  
+    //The index increases and decreases depending on the scrolling forward or backward movement.
+    const handleWheel = (event) => {
+      if (event.deltaY < 0) {
+        // Upward scroll
+        setCurrentVideoIndex((prevValue) => Math.max(prevValue - 1, 0));
+      } else if (event.deltaY > 0 && currentVideoIndex < videoList.length - 1) {
+        // Downward scroll, and not at the end of the list
+        setCurrentVideoIndex((prevValue) => Math.max(prevValue - 1, videoList.length - 1));
+      }
+    };
 
-  }, [currentVideoIndex]);
-  useEffect(() => {
-    try {
-      const handleWheel = (event) => {
-        if (event.deltaY < 0) {
-          // Upward scroll
-          setCurrentVideoIndex((prevValue) => Math.max(prevValue - 1, 0));
-        } else if (event.deltaY > 0 && currentVideoIndex < videoList.length - 1) {
-          // Downward scroll, and not at the end of the list
-          setCurrentVideoIndex((prevValue) => Math.max(prevValue - 1, videoList.length - 1));
-        }
-      };
+    window.addEventListener("wheel", handleWheel);
 
-      window.addEventListener("wheel", handleWheel);
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
 
-      return () => {
-        window.removeEventListener("wheel", handleWheel);
-      };
+  }, [currentVideoIndex, videoList, scrollToIndexRef]);
 
-    } catch (error) {
-      console.log(error)
-
-    }
-  }, []);
 
   // Include currentVideoIndex in the dependency array
-
   const openModal = (currentVideo) => {
     setOpenSharesWideScreen(true);
     setCurrentVideoIndex(currentVideo);
@@ -72,56 +62,45 @@ const TabsItemSocial = () => {
     document.body.style.overflowY = "auto";
   };
 
-  const VideoItem = React.memo(() => {
-    return (
-      // ... mevcut bileşen kodunuz
-      <button onClick={() => window.alert("ssf")} className='hover:opacity-90 absolute right-2 bottom-20 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl'>
-        <CiPlay1 />
-        <h1 className='text-sm'>İzle</h1>
-      </button>
-      // ... diğer kodlar
-    );
-  });
-  
 
   console.log(currentVideoIndex, videoList.length)
 
   return (
     <div className='grid grid-cols-1 miniTelefon:grid-cols-2 miniTablet:grid-cols-3 gap-5 pt-5'>
-     
-        {videoList && videoList.map((video, i) => (
-          <div key={video.id} className='relative row-span cursor-pointer bg-white border rounded-md shadow-md shadow-white'>
-            <BsFilePlayFill size={30} onClick={() => window.alert("ssf")} className='cursor-pointer absolute top-2 left-1' color='white' />
-            <div style={{ borderRadius: '5px', overflow: 'hidden' }}>
-              <ReactPlayer
-                ref={videoRef}
-                loop={false}
-                playsInline
-                light={false}
-                controls={false}
-                url={[video.name]}
-                width='100%'
-                height='50%'
-                playing={false}
-                muted={true}
-              />
-            </div>
-            <button onClick={() => openModal(video.id)} className='hover:opacity-90 absolute right-2 bottom-20 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl'>
-              <CiPlay1 />
-              <h1 className='text-sm'>İzle</h1>
-            </button>
-            <div className='flex flex-col gap-2 text-start pt-5 h-20 overflow-y-auto'>
-              <h1 className='text-xs font-semibold px-2'>Video Mükemmeldi! İzlemeyenler Ne Kaçırıyor? 🌟🎬</h1>
-            </div>
-            <div className='bg-gray-200 text-gray-800 text-[10px] text-end px-2 border-t rounded-b-md'>
-              <div className='flex items-center gap-1 justify-end'>
-                <CiCalendar />
-                <h4>20.28.2018</h4>
-              </div>
+
+      {videoList && videoList.map((video, i) => (
+        <div key={video.id} className='relative row-span cursor-pointer bg-white border rounded-md shadow-md shadow-white'>
+          <BsFilePlayFill size={30} className='cursor-pointer absolute top-2 left-1' color='white' />
+          <div style={{ borderRadius: '5px', overflow: 'hidden' }}>
+            <ReactPlayer
+              ref={videoRef}
+              loop={false}
+              playsInline
+              light={false}
+              controls={false}
+              url={[video.name]}
+              width='100%'
+              height='50%'
+              playing={false}
+              muted={true}
+            />
+          </div>
+          <button onClick={() => openModal(video.id)} className='hover:opacity-90 absolute right-2 bottom-20 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl'>
+            <CiPlay1 />
+            <h1 className='text-sm'>İzle</h1>
+          </button>
+          <div className='flex flex-col gap-2 text-start pt-5 h-20 overflow-y-auto'>
+            <h1 className='text-xs font-semibold px-2'>Video Mükemmeldi! İzlemeyenler Ne Kaçırıyor? 🌟🎬</h1>
+          </div>
+          <div className='bg-gray-200 text-gray-800 text-[10px] text-end px-2 border-t rounded-b-md'>
+            <div className='flex items-center gap-1 justify-end'>
+              <CiCalendar />
+              <h4>20.28.2018</h4>
             </div>
           </div>
-        ))}
- 
+        </div>
+      ))}
+
 
       {openSharesWideScreen && (
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm tablet:bg-none z-50'>
