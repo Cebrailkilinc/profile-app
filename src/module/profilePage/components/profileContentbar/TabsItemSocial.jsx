@@ -28,7 +28,7 @@ const TabsItemSocial = () => {
   const scrollToIndexRef = useRef(null);
 
   // Switching to new video when scrolling
-  useEffect(() => {  
+  useEffect(() => {
     //The index increases and decreases depending on the scrolling forward or backward movement.
     const handleWheel = (event) => {
       if (event.deltaY < 0) {
@@ -47,7 +47,38 @@ const TabsItemSocial = () => {
     };
 
   }, [currentVideoIndex, videoList, scrollToIndexRef]);
+  
+  useEffect(() => {
+    const handleTouch = (startY, endY) => {
+      const deltaY = startY - endY;
+      if (deltaY > 0) {
+        // Aşağı kaydırma
+        setCurrentVideoIndex((prevValue) => Math.min(prevValue + 1, videoList.length - 1));
+      } else if (deltaY < 0) {
+        // Yukarı kaydırma
+        setCurrentVideoIndex((prevValue) => Math.max(prevValue - 1, 0));
+      }
+    };
 
+    let startY;
+
+    const touchStart = (event) => {
+      startY = event.touches[0].clientY;
+    };
+
+    const touchEnd = (event) => {
+      const endY = event.changedTouches[0].clientY;
+      handleTouch(startY, endY);
+    };
+
+    window.addEventListener("touchstart", touchStart);
+    window.addEventListener("touchend", touchEnd);
+
+    return () => {
+      window.removeEventListener("touchstart", touchStart);
+      window.removeEventListener("touchend", touchEnd);
+    };
+  }, [setCurrentVideoIndex, videoList]);
 
   // Include currentVideoIndex in the dependency array
   const openModal = (currentVideo) => {
