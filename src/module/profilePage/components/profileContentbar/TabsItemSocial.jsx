@@ -14,13 +14,13 @@ import { VList, VGrid } from 'virtua';
 
 //All videos
 const videoList = [
-  { id: 0, name: '/video4.mp4', caption: 'Video 1', desc: "Bugüns çok özel bir video hazırladım sizler için umarım seversiniz." },
-  { id: 1, name: '/video4.mp4', caption: 'Video 1', desc: "Bugünss çok özel bir video hazırladım sizler için umarım seversiniz." },
-  { id: 2, name: '/video4.mp4', caption: 'Video 1', desc: "Bugünssw çok özel bir video hazırladım sizler için umarım seversiniz." },
+  { id: 0, name: '/video4.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
+  { id: 1, name: '/video4.mp4', caption: 'Video 1', desc: "Dün bugündür bugün yalan şiirlerr ise yarınlardır..." },
+  { id: 2, name: '/video4.mp4', caption: 'Video 1', desc: "Berlin sert abiler mert :)" },
 ];
 
 const TabsItemSocial = () => {
-  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(false);
+  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(true);
   const [isHearted, setIsHearted] = useState(false);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
@@ -47,7 +47,7 @@ const TabsItemSocial = () => {
     };
 
   }, [currentVideoIndex, videoList, scrollToIndexRef]);
-  
+
   useEffect(() => {
     const handleTouch = (startY, endY) => {
       const deltaY = startY - endY;
@@ -121,7 +121,7 @@ const TabsItemSocial = () => {
             <h1 className='text-sm'>İzle</h1>
           </button>
           <div className='flex flex-col gap-2 text-start pt-5 h-20 overflow-y-auto'>
-            <h1 className='text-xs font-semibold px-2'>Video Mükemmeldi! İzlemeyenler Ne Kaçırıyor? 🌟🎬</h1>
+            <h1 className='text-xs font-semibold px-2'>{video.desc} 🌟🎬</h1>
           </div>
           <div className='bg-gray-200 text-gray-800 text-[10px] text-end px-2 border-t rounded-b-md'>
             <div className='flex items-center gap-1 justify-end'>
@@ -136,11 +136,11 @@ const TabsItemSocial = () => {
       {openSharesWideScreen && (
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm tablet:bg-none z-50'>
           <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
-            <span onClick={closeModal} className='text-white absolute z-40 cursor-pointer top-3 right-3 tablet:top-7 miniTablet:right-3 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
+            <span onClick={closeModal} className='text-white absolute z-40 cursor-pointer top-16 telefon:top-3 right-3 tablet:top-7 miniTablet:right-3 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
               <IoMdClose size={25} className='hover:opacity-80' />
             </span>
             <div className='text-white'>
-              <div className='flex items-center justify-between px-3 py-2'>
+              <div className='flex items-center justify-between px-3 py-2 mt-5 telefon:mt-0'>
                 <div className='flex items-center gap-2'>
                   <img
                     className='h-auto rounded-full w-6'
@@ -159,9 +159,9 @@ const TabsItemSocial = () => {
               </div>
             </div>
 
-            <div className='video-modal h-[50vh] telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
+            <div className='video-modal h-[95vh] telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
               <div key={videoList[currentVideoIndex]?.id} className='snap-start snap-always py-2 h-[100%]' >
-                <div className='h-4/6 bg-primaryGray'>
+                <div className='h-full telefon:h-4/6 bg-black bg-opacity-80 backdrop-blur-sm telefon:bg-primaryGray'>
                   <ReactPlayer
                     loop={false}
                     playsInline
@@ -171,28 +171,64 @@ const TabsItemSocial = () => {
                     width='100%'
                     height='100%'
                     playing={false}
-                    muted={true} />
+                    muted={true}
+                    className="z-0"
+                  />
                 </div>
-                <div className='comment w-full h-2/6 overflow-y-auto flex flex-col items-start justify-between p-3'>
-                  <div className='w-full flex flex-col gap-2'>
-                    <div className='w-full flex gap-3 items-start justify-between cursor-pointer text-white'>
+                <div className='flex telefon:hidden flex-col items-end justify-end text-start text-xs max-w-[250px] h-24 overflow-y-auto  gap-3 absolute z-50  bottom-24 left-1 text-white border-none p-3  ' >
+                  
+                  <p>{videoList[currentVideoIndex]?.desc}</p>
+
+                </div>
+                <div className='flex telefon:hidden flex-col items-end gap-3 absolute z-50  bottom-24 right-1 text-white border-none p-3 rounded-md bg-gradient-to-t from-black bg-opacity-80 backdrop-blur-sm ' >
+                  <div  >
+                    {isHearted ? (
+                      <div className='flex flex-col items-center gap-1 '>                        
+                        <IoMdHeart
+                          size={18}
+                          onClick={() => setIsHearted(!isHearted)}
+                          className={`heart-icon h-6 w-6 ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`} />
+                          <h3 className='text-lg font-extralight text-start text-red'>23</h3>
+                      </div>
+                    ) : (
+                      <div className='flex flex-col items-center gap-1 '>
+                        
+                        <FaHeart
+                          onClick={() => setIsHearted(!isHearted)}
+                          className={`heart-icon h-6 w-6 ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`} />
+                          <h3 className='text-lg font-extralight text-start text-red'>13</h3>
+                      </div>
+                    )}
+                  </div>
+                  <div className='flex flex-col items-center gap-1 ' >                    
+                    <MdOutlineModeComment className={`h-6 w-6 hover:opacity-60`} />
+                    <h3 className='text-lg font-extralight text-start text-red'>23</h3>
+                  </div>
+                  <div className='flex flex-col items-center gap-1 ' >
+                    <BsShare className={`h-6 w-6 mb-1 hover:opacity-60`} />
+                  </div>
+
+                </div>
+                <div className='hidden comment w-full telefon:h-2/6 overflow-y-auto telefon:flex flex-col items-start justify-between p-3'>
+                  <div className=' w-full telefon:flex flex-col gap-2'>
+                    <div className='w-full flex gap-1 items-start justify-between cursor-pointer text-white'>
                       <div className='flex items-center gap-2'>
                         <div>
                           {isHearted ? (
                             <IoMdHeart
                               size={18}
                               onClick={() => setIsHearted(!isHearted)}
-                              className={`heart-icon h-4 w-4 ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`} />
+                              className={`heart-icon h-8 w-8 ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`} />
                           ) : (
                             <FaHeart
                               onClick={() => setIsHearted(!isHearted)}
-                              className={`heart-icon h-4 w-4 ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`} />
+                              className={`heart-icon h-8 w-8 ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`} />
                           )}
                         </div>
-                        <MdOutlineModeComment className={`h-4 w-4 hover:opacity-60`} />
-                        <BsShare className={`h-4 w-4 mb-1 hover:opacity-60`} />
+                        <MdOutlineModeComment className={`h-8 w-8 hover:opacity-60`} />
+                        <BsShare className={`h-8 w-8 mb-1 hover:opacity-60`} />
                       </div>
-                      <LuBookmark className={`h-4 w-4 mb-1 hover:opacity-60`} />
+                      <LuBookmark className={`h-8 w-8 mb-1 hover:opacity-60`} />
                     </div>
                     <h3 className='text-xs text-start text-white'>23 beğenme, 12 yorum</h3>
                     <div className='flex items-start gap-2 text-xs'>
@@ -205,8 +241,9 @@ const TabsItemSocial = () => {
             </div>
           </div>
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 

@@ -71,7 +71,6 @@ const ProfilePageLayout = () => {
         showAlert('Kopyalandı!', 'success');
     };
 
-
     return (
         <div className=' tablet:fixed bg-bgGray w-full  mx-auto  z-0 pt-20 tablet:pt-28 pb-10'>
             <div className=' max-w-[584px] w-full  miniTablet:max-w-[768px] tablet:max-w-[1920px] mx-auto flex  flex-col items-center telefon:items-start tablet:flex-row  gap-5 text-center px-5 laptop:px-10'>
