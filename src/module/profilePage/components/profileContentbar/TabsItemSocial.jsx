@@ -139,7 +139,7 @@ const TabsItemSocial = () => {
             <span onClick={closeModal} className='text-white absolute z-40 cursor-pointer top-16 telefon:top-3 right-3 tablet:top-7 miniTablet:right-3 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
               <IoMdClose size={25} className='hover:opacity-80' />
             </span>
-            <div className='text-white mt-11 telefon:mt-0'>
+            {/* <div className='text-white mt-11 telefon:mt-0'>
               <div className='flex items-center justify-between px-3 py-2 mt-5 telefon:mt-0'>
                 <div className='flex items-center gap-2'>
                   <img
@@ -157,10 +157,9 @@ const TabsItemSocial = () => {
                   <h1 className='text-[11px]  telefon:block'>Takip Et</h1>
                 </div>
               </div>
-            </div>
-
+            </div> */}
             <div className=' h-[100vh]  telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
-              <div key={videoList[currentVideoIndex]?.id} className='snap-start snap-always py-2 h-[95%]' >
+              <div key={videoList[currentVideoIndex]?.id} className='snap-start snap-always py-2 h-[100%]' >
                 <div className='h-full telefon:h-4/6 bg-black bg-opacity-80 backdrop-blur-sm telefon:bg-primaryGray'>
                   <ReactPlayer
                     loop={false}
