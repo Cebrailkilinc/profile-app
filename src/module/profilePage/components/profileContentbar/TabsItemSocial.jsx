@@ -135,7 +135,7 @@ const TabsItemSocial = () => {
 
       {openSharesWideScreen && (
         <div className='fixed tablet:top-20 inset-0 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm tablet:bg-none z-50'>
-          <div className='w-full max-w-xl bg-secondaryGray shadow-xl rounded-lg'>
+          <div className='w-full max-w-xl bg-secondaryGray shadow-xl telefon:rounded-lg'>
             <span onClick={closeModal} className='text-white absolute z-40 cursor-pointer top-16 telefon:top-3 right-3 tablet:top-7 miniTablet:right-3 rounded-full p-2 bg-black hover:bg-white hover:text-black duration-300'>
               <IoMdClose size={25} className='hover:opacity-80' />
             </span>
@@ -159,8 +159,8 @@ const TabsItemSocial = () => {
               </div>
             </div>
 
-            <div className='video-modal h-[95vh] telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
-              <div key={videoList[currentVideoIndex]?.id} className='snap-start snap-always py-2 h-[100%]' >
+            <div className=' h-[100vh]  telefon:h-[430px] overflow-y-auto snap-mandatory snap-y'>
+              <div key={videoList[currentVideoIndex]?.id} className='snap-start snap-always py-2 h-[95%]' >
                 <div className='h-full telefon:h-4/6 bg-black bg-opacity-80 backdrop-blur-sm telefon:bg-primaryGray'>
                   <ReactPlayer
                     loop={false}
@@ -218,17 +218,17 @@ const TabsItemSocial = () => {
                             <IoMdHeart
                               size={18}
                               onClick={() => setIsHearted(!isHearted)}
-                              className={`heart-icon h-8 w-8 ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`} />
+                              className={`heart-icon h-4 w-4 ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`} />
                           ) : (
                             <FaHeart
                               onClick={() => setIsHearted(!isHearted)}
-                              className={`heart-icon h-8 w-8 ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`} />
+                              className={`heart-icon h-4 w-4 ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`} />
                           )}
                         </div>
-                        <MdOutlineModeComment className={`h-8 w-8 hover:opacity-60`} />
-                        <BsShare className={`h-8 w-8 mb-1 hover:opacity-60`} />
+                        <MdOutlineModeComment className={`h-4 w-4 hover:opacity-60`} />
+                        <BsShare className={`h-4 w-4 mb-1 hover:opacity-60`} />
                       </div>
-                      <LuBookmark className={`h-8 w-8 mb-1 hover:opacity-60`} />
+                      <LuBookmark className={`h-4 w-4 mb-1 hover:opacity-60`} />
                     </div>
                     <h3 className='text-xs text-start text-white'>23 beğenme, 12 yorum</h3>
                     <div className='flex items-start gap-2 text-xs'>
