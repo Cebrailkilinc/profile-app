@@ -15,7 +15,7 @@ import { VList, VGrid } from 'virtua';
 //All videos
 const videoList = [
   { id: 0, name: '/video4.mp4', caption: 'Video 1', desc: "Bugün çok özel bir video hazırladım sizler için umarım seversiniz." },
-  { id: 1, name: '/video4.mp4', caption: 'Video 1', desc: "Dün bugündür bugün yalan şiirlerr ise yarınlardır..." },
+  { id: 1, name: '/2.mp4', caption: 'Video 1', desc: "Dün bugündür bugün yalan şiirlerr ise yarınlardır..." },
   { id: 2, name: '/video4.mp4', caption: 'Video 1', desc: "Berlin sert abiler mert :)" },
 ];
 
