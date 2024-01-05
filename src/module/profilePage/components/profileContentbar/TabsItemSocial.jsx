@@ -20,7 +20,7 @@ const videoList = [
 ];
 
 const TabsItemSocial = () => {
-  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(true);
+  const [openSharesWideScreen, setOpenSharesWideScreen] = useState(false);
   const [isHearted, setIsHearted] = useState(false);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
@@ -100,9 +100,9 @@ const TabsItemSocial = () => {
     <div className='grid grid-cols-1 miniTelefon:grid-cols-2 miniTablet:grid-cols-3 gap-5 pt-5'>
 
       {videoList && videoList.map((video, i) => (
-        <div key={video.id} className='relative row-span cursor-pointer bg-white border rounded-md shadow-md shadow-white'>
+        <div key={video.id} className='relative h-60 row-span cursor-pointer bg-white border rounded-md shadow-md shadow-white'>
           <BsFilePlayFill size={30} className='cursor-pointer absolute top-2 left-1' color='white' />
-          <div style={{ borderRadius: '5px', overflow: 'hidden' }}>
+          <div  style={{ borderRadius: '5px', overflow: 'hidden', height:"50%" }}>
             <ReactPlayer
               ref={videoRef}
               loop={false}
@@ -111,19 +111,19 @@ const TabsItemSocial = () => {
               controls={false}
               url={[video.name]}
               width='100%'
-              height='50%'
+              height='auto'
               playing={false}
               muted={true}
             />
           </div>
-          <button onClick={() => openModal(video.id)} className='hover:opacity-90 absolute right-2 bottom-20 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl'>
+          <button onClick={() => openModal(video.id)} className='hover:opacity-90 absolute right-2 bottom-28 flex items-center gap-2 bg-primaryPink text-white px-3 py-1 rounded-2xl'>
             <CiPlay1 />
             <h1 className='text-sm'>İzle</h1>
           </button>
           <div className='flex flex-col gap-2 text-start pt-5 h-20 overflow-y-auto'>
             <h1 className='text-xs font-semibold px-2'>{video.desc} 🌟🎬</h1>
           </div>
-          <div className='bg-gray-200 text-gray-800 text-[10px] text-end px-2 border-t rounded-b-md'>
+          <div className='absolute bottom-0 w-full bg-gray-200 text-gray-800 text-[10px] text-end px-2 border-t rounded-b-md'>
             <div className='flex items-center gap-1 justify-end'>
               <CiCalendar />
               <h4>20.28.2018</h4>
