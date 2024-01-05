@@ -174,32 +174,50 @@ const TabsItemSocial = () => {
                     className="z-0"
                   />
                 </div>
-                <div className='flex telefon:hidden flex-col items-end justify-end text-start text-xs max-w-[250px] h-24 overflow-y-auto  gap-3 absolute z-50  bottom-24 left-1 text-white border-none p-3  ' >
-                  
+                <div className='flex telefon:hidden flex-col items-start justify-end text-start text-xs max-w-[250px]  overflow-y-auto  gap-3 absolute z-50  bottom-24 left-1 text-white border-none p-3  ' >
+                  <div className='text-white '>
+                    <div className='flex items-center px-1 py-2 mt-5 telefon:mt-0'>
+                      <div className='flex items-center gap-2'>
+                        <img
+                          className='h-auto rounded-full w-10'
+                          src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee'
+                          alt='user-avatar'
+                        />
+                        <div className='text-start text-[9px]'>
+                          <h1>Seda Odabaşı</h1>
+                          <h3 className='text-textGray max-w-[80px]'>Uzman, Klinik Psikoloji</h3>
+                        </div>
+                      </div>
+                      <div className='w-20 flex items-center justify-center py-1 border rounded-md text-white bg-none hover:bg-white hover:text-black duration-300 cursor-pointer'>
+                        <FiPlus size={14} className={`heart-icon ${isHearted ? 'heartedmb-1 animate-heart' : ''}`} />
+                        <h1 className='text-[11px]  telefon:block'>Takip Et</h1>
+                      </div>
+                    </div>
+                  </div>
                   <p>{videoList[currentVideoIndex]?.desc}</p>
 
                 </div>
                 <div className='flex telefon:hidden flex-col items-end gap-3 absolute z-50  bottom-24 right-1 text-white border-none p-3 rounded-md bg-gradient-to-t from-black bg-opacity-80 backdrop-blur-sm ' >
                   <div  >
                     {isHearted ? (
-                      <div className='flex flex-col items-center gap-1 '>                        
+                      <div className='flex flex-col items-center gap-1 '>
                         <IoMdHeart
                           size={18}
                           onClick={() => setIsHearted(!isHearted)}
                           className={`heart-icon h-6 w-6 ${isHearted ? 'hearted text-red-700 animate-heart' : ''}`} />
-                          <h3 className='text-lg font-extralight text-start text-red'>23</h3>
+                        <h3 className='text-lg font-extralight text-start text-red'>23</h3>
                       </div>
                     ) : (
                       <div className='flex flex-col items-center gap-1 '>
-                        
+
                         <FaHeart
                           onClick={() => setIsHearted(!isHearted)}
                           className={`heart-icon h-6 w-6 ${isHearted ? 'hearted text-red-700 mb-1 animate-heart' : ''}`} />
-                          <h3 className='text-lg font-extralight text-start text-red'>13</h3>
+                        <h3 className='text-lg font-extralight text-start text-red'>13</h3>
                       </div>
                     )}
                   </div>
-                  <div className='flex flex-col items-center gap-1 ' >                    
+                  <div className='flex flex-col items-center gap-1 ' >
                     <MdOutlineModeComment className={`h-6 w-6 hover:opacity-60`} />
                     <h3 className='text-lg font-extralight text-start text-red'>23</h3>
                   </div>
