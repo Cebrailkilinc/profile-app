@@ -35,7 +35,9 @@ module.exports = {
         secondaryGray:"#1E1E1E",  
         secondaryRed:"#ffcccc",    
         tertiaryBlue:"#0F2557",
-        tertiaryRed:"#ff4d4d"
+        tertiaryRed:"#ff4d4d",
+        blueOne:"#34A0A4",
+        redOne:"#E30815"
       },
       display: ["group-hover"],
     },

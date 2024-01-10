@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react'
+import React, { useCallback,useState } from 'react'
 //Components
 import Rating from "../../../../../package/components/content/Rating"
+
 // Icons
 import { BiComment } from "react-icons/bi";
 import { FaBullseye, FaMessage } from "react-icons/fa6";
@@ -12,6 +13,8 @@ import { BsCheck } from "react-icons/bs";
 import { IoMdWallet } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { GrLanguage } from "react-icons/gr";
+
+import Link from 'next/link';
 
 //This props came from <ProfilePageLayout/>  component
 const ProfileCardHeader = (
@@ -26,7 +29,8 @@ const ProfileCardHeader = (
         setIsFollow,
         socialRef
     }) => {
-        //Cebrail
+    
+       
 
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
     const handleOpenCommentDetailPage = useCallback((event) => {
@@ -47,6 +51,37 @@ const ProfileCardHeader = (
     return (
         <>
             <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-start gap-3'>
+                <div className="relative imageArea w-full flex flex-col items-center justify-center">
+                    <span
+                        className={`absolute h-5 w-5 ${status === 1 ? "bg-blueOne" : "bg-redOne"
+                            } rounded-full top-4 point right-[87px] border-white border-4`}
+                    ></span>
+                    <Link href={"/"}>
+                        <img
+                            src={"https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee"}
+                            className={`w-28 h-28 rounded-full ${status !== undefined
+                                ? `border-2 ${status === 1 ? "border-blueOne" : "border-redOne"
+                                }`
+                                : ""
+                                }`}
+                            alt=""
+                        />
+                    </Link>
+
+
+                    {status !== undefined && (
+                        <span
+                            className={`status bg-lightBlue ${status === 1 ? "text-blueOne" : "text-redOne"
+                                } px-3 py-1 rounded-2xl text-sm border-${status === 1 ? "blueOne" : "redOne"
+                                } border relative bottom-3.5`}
+                        >
+                            {status === 1 ? "Çevrim içi" : "Meşgul"}
+                        </span>
+                    )}
+
+
+                </div>
+
                 <img
                     className='h-auto rounded-lg border-4 border-primaryGreen shadow-lg shadow-primaryGreen w-full miniTelefon:w-[150px]'
                     src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee'
