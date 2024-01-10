@@ -48,7 +48,7 @@ const ProfileCardHeader = (
         <>
             <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-start gap-3'>
                 <img
-                    className='h-auto rounded-lg border-4 w-full miniTelefon:w-[150px]'
+                    className='h-auto rounded-lg border-4 border-primaryGreen shadow-lg shadow-primaryGreen w-full miniTelefon:w-[150px]'
                     src='https://www.livemedy.com/tr/files/download/950624a9-dd4b-406d-b34e-d52799db33ee'
                 />
                 <div className='w-full flex flex-col justify-between '>
