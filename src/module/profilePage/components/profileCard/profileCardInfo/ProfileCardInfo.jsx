@@ -46,7 +46,7 @@ const ProfileCardHeader = (
 
     return (
         <>
-            <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-center gap-3'>
+            <div className='relative max-w-full flex flex-col miniTelefon:flex-row items-center  miniTelefon:items-start gap-3'>
                 <div className="relative imageArea min-w-[115px] flex flex-col items-center justify-center">
                     <span
                         className={`absolute h-5 w-5 ${1 === 1 ? "bg-blueOne" : "bg-redOne"
@@ -75,7 +75,7 @@ const ProfileCardHeader = (
                     <div className='flex flex-col items-start gap-1' >
                         <h1 className='text-start text-[20px] telefon:text-[22px]' >Seda <br /> Odabaşı Dinç</h1>
                         <h3 className='text-textGray text-xs'>Uzman, Klinik Psikoloji</h3>
-                        <div className=' flex items-center gap-2 text-xs cursor-pointer' >
+                        <div className=' flex items-center gap-2 miniTelefon:mt-4 telefon:mt-3 text-xs cursor-pointer' >
                             <button className='bg-primaryGreen w-20  hover:opacity-80 text-white  rounded-md  transition duration-300 ease-in-out flex items-center justify-center py-1  gap-1'>
                                 <FaMessage className='text-gray-100 hover:opacity-90 ' />
                                 <h1 className='hover:opacity-90 text-[10px]' >Mesaj</h1>
