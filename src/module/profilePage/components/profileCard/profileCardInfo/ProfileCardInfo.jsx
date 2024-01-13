@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 //Components
 import Rating from "../../../../../package/components/content/Rating"
 // Icons
@@ -12,7 +12,7 @@ import { BsCheck } from "react-icons/bs";
 import { IoMdWallet } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { GrLanguage } from "react-icons/gr";
-
+import { IoIosCloseCircleOutline } from "react-icons/io";
 //This props came from <ProfilePageLayout/>  component
 const ProfileCardHeader = (
     {
@@ -27,6 +27,8 @@ const ProfileCardHeader = (
         socialRef
     }) => {
     //Cebrail
+
+    const [wideScreenImg, setWideScreenImg] = useState(false)
 
     //This function updates the icon and opens <Evaluation/> in the profile detail field.
     const handleOpenCommentDetailPage = useCallback((event) => {
@@ -53,8 +55,9 @@ const ProfileCardHeader = (
                             } rounded-full top-4 point right-0 border-white border-4`}
                     ></span>
                     <img
+                        onClick={() => setWideScreenImg(true)}
                         src="/profileImage.jpg"
-                        className={`w-28 h-28 rounded-full ${1 !== undefined
+                        className={`cursor-pointer w-28 h-28 rounded-full ${1 !== undefined
                             ? `border-2 ${1 === 1 ? "border-blueOne" : "border-redOne"
                             }`
                             : ""
@@ -100,26 +103,26 @@ const ProfileCardHeader = (
                         </div>
                     </div>
                     <div ref={socialRef} className=' absolute top-0 w-full flex gap-3  items-center justify-end cursor-pointer'>
-                            {isHearted ? (
-                                <div onClick={() => setIsHearted(!isHearted)} className='w-20 flex miniTelefon:hidden  items-center justify-center py-1 gap-1 bg-primaryBlue text-white border rounded-md  ' >
-                                    <BsCheck
-                                        size={18}
-                                        className={`heart-icon ${isHearted ? 'hearted text-white  animate-heart ' : ''}`}
-                                    />
-                                    <h1 className='text-[11px]' >Takip</h1>
-                                </div>
-                            ) : (
-                                <div onClick={() => setIsHearted(!isHearted)} className='w-20 flex miniTelefon:hidden  items-center justify-center py-1  border rounded-md 
+                        {isHearted ? (
+                            <div onClick={() => setIsHearted(!isHearted)} className='w-20 flex miniTelefon:hidden  items-center justify-center py-1 gap-1 bg-primaryBlue text-white border rounded-md  ' >
+                                <BsCheck
+                                    size={18}
+                                    className={`heart-icon ${isHearted ? 'hearted text-white  animate-heart ' : ''}`}
+                                />
+                                <h1 className='text-[11px]' >Takip</h1>
+                            </div>
+                        ) : (
+                            <div onClick={() => setIsHearted(!isHearted)} className='w-20 flex miniTelefon:hidden  items-center justify-center py-1  border rounded-md 
                         text-white bg-primaryBlue' >
-                                    <FiPlus
-                                        size={14}
-                                        className={`heart-icon ${isHearted ? 'heartedmb-1 animate-heart' : ''}`}
-                                    />
-                                    <h1 className='text-[11px] miniTelefon:hidden telefon:block ' >Takip Et</h1>
-                                </div>
-                            )}
-                            <BsBoxArrowUp onClick={() => { setIsFollow(!isFollow) }} className={`${isFollow ? "text-primaryBlue" : ""} hover:opacity-60`} />
-                        </div>
+                                <FiPlus
+                                    size={14}
+                                    className={`heart-icon ${isHearted ? 'heartedmb-1 animate-heart' : ''}`}
+                                />
+                                <h1 className='text-[11px] miniTelefon:hidden telefon:block ' >Takip Et</h1>
+                            </div>
+                        )}
+                        <BsBoxArrowUp onClick={() => { setIsFollow(!isFollow) }} className={`${isFollow ? "text-primaryBlue" : ""} hover:opacity-60`} />
+                    </div>
                     <div className=' w-full flex gap-3 items-center justify-end cursor-pointer'>
                         <div className='flex items-center gap-1 mb-1 ' onClick={handleOpenCommentDetailPage} >
                             <Rating size={14} color="secondaryBlue" /> {/*Is a Component */}
@@ -161,6 +164,21 @@ const ProfileCardHeader = (
                     </div>
                 </div>
             </div>
+            {wideScreenImg && (
+                <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50'>
+                   
+                        <IoIosCloseCircleOutline onClick={() => setWideScreenImg(false)} size={35} className='absolute top-20 tablet:top-28 right-4 text-white hover:opacity-80 cursor-pointer' />
+                        <img
+                            src="/profileImage.jpg"
+                            className={`rounded-full w-4/5 p-2 telefon:w-3/5 miniTablet:w-2/5 tablet:w-auto tablet:h-2/3`}
+                            alt=""
+                        />
+           
+                </div>
+            )}
+
+
+
         </>
     )
 }
